@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junior Digital Production & QA Assistant resume focused on visual QA, asset review, manual testing, Jira workflows, and AI-assisted documentation with human review.">
+    <meta property="og:title" content="Agustina Burelli — Digital Production & QA Resume">
+    <meta property="og:description" content="Interactive HTML resume with bilingual content, print-ready view, and QA checklist mode.">
+    <meta property="og:type" content="website">
+    <title>Agustina Burelli - Resume</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Agustina Burelli",
+      "jobTitle": "Junior Digital Production & QA Assistant",
+      "email": "mailto:agustinaburellitj@gmail.com",
+      "url": "https://github.com/agustinaburellitj-code/Agustina-Burelli-CV",
+      "sameAs": [
+        "https://github.com/agustinaburellitj-code"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressRegion": "Zona Oeste",
+        "addressCountry": "AR"
+      },
+      "knowsAbout": [
+        "Digital production",
+        "Visual QA",
+        "Asset review",
+        "Manual testing",
+        "Jira workflows",
+        "Figma",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CLEAN UI TOKENS --- */
+        :root {
+            --bg-body: #f9fafb;
+            --bg-card: #ffffff;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --border-soft: #e5e7eb;
+            --font-ui: 'Plus Jakarta Sans', sans-serif;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+            /* QA audit sweep and activity panel */
+            .qa-scanner {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.52), transparent);
+                z-index: 1200;
+                pointer-events: none;
+                transform: translateY(-120%);
+                display: none;
+                opacity: 0.72;
+            }
+
+            .qa-inspector .qa-scanner { display: block; }
+
+            @keyframes scanScreen {
+                0% { transform: translateY(-120%); }
+                100% { transform: translateY(120%); }
+            }
+
+            .qa-console {
+                position: fixed;
+                right: 1rem;
+                bottom: 1rem;
+                width: 320px;
+                max-width: 40vw;
+                background: rgba(255, 255, 255, 0.97);
+                color: #334155;
+                padding: 0.6rem 0.7rem;
+                border-radius: 10px;
+                z-index: 1150;
+                border: 1px solid rgba(148, 163, 184, 0.28);
+                box-shadow: 0 10px 26px rgba(15, 23, 42, 0.16);
+                display: none;
+                font-size: 0.82rem;
+            }
+
+            .qa-console.visible { display: block; }
+            .qa-console-header { font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main); font-size: 0.92rem; }
+            .qa-log { list-style: none; margin: 0; padding: 0; max-height: 220px; overflow: auto; display:flex; flex-direction:column; gap: 0.2rem; }
+            .qa-log li { opacity: 0; transform: translateY(6px); animation: qaLogIn 300ms forwards; }
+            @keyframes qaLogIn { to { opacity: 1; transform: none; } }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-ui);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding: 2rem 1rem;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent); }
+
+        button, select {
+            font: inherit;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            min-width: 0;
+            transition: opacity 0.16s ease, transform 0.16s ease;
+        }
+
+        body.is-translating .cv-container {
+            opacity: 0.82;
+            transform: translateY(1px);
+        }
+
+        .header {
+            padding: 2.5rem 3rem;
+            border-bottom: 1px solid var(--border-soft);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .header-info {
+            flex: 1;
+            min-width: 300px;
+            max-width: 100%;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+        }
+
+        .role-subtitle {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.45;
+        }
+
+        .ai-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 620px;
+        }
+
+        .header-controls {
+            display: grid;
+            gap: 0.75rem;
+            align-items: start;
+            width: min(100%, 260px);
+        }
+
+        .header-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-end;
+            min-width: 240px;
+            width: min(100%, 280px);
+            max-width: 100%;
+        }
+
+        .profile-photo-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-photo-wrapper picture {
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .profile-card {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            width: 100%;
+            min-width: 0;
+            padding: 1rem;
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+        }
+
+        .profile-photo {
+            width: 104px;
+            height: 104px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 1px solid rgba(37, 99, 235, 0.16);
+            box-shadow: 0 10px 22px rgba(37, 99, 235, 0.08);
+            flex-shrink: 0;
+        }
+
+        .profile-card:hover {
+            border-color: rgba(37, 99, 235, 0.24);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+            transform: translateY(-1px);
+        }
+
+        /* --- NATIVE SOBER QA TOOLTIP --- */
+        .asset-tooltip {
+            display: none;
+            position: absolute;
+            background: rgba(17, 24, 39, 0.98);
+            border: 1px solid #374151;
+            color: #f3f4f6;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            width: 180px;
+            bottom: -5px;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            z-index: 100;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+            text-align: left;
+            font-weight: 400;
+            white-space: pre-line;
+        }
+
+        .qa-inspector .profile-photo-wrapper:hover .asset-tooltip {
+            display: block;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            min-width: 0;
+        }
+
+        .name,
+        .role,
+        .role-subtitle,
+        .ai-note,
+        .section-title,
+        .item-title,
+        .item-subtitle,
+        .cert-title,
+        .cert-meta {
+            overflow-wrap: anywhere;
+        }
+
+        .profile-tagline {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            overflow-wrap: anywhere;
+        }
+
+        .profile-subtitle {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        .control-help {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-top: 0.15rem;
+            overflow-wrap: anywhere;
+        }
+
+        .qa-report {
+            display: none;
+            padding: 1rem 3rem 0;
+        }
+
+        .qa-inspector .qa-report {
+            display: block;
+        }
+
+        .qa-report-card {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-soft);
+            background: rgba(236, 248, 255, 0.95);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .qa-report-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .qa-report-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        .qa-status {
+            font-size: 0.85rem;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .qa-report-text {
+            margin: 0 0 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* --- STATIC METRICS PANEL --- */
+        .qa-metrics-static {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            margin-bottom: 1.25rem;
+        }
+        .qa-metrics-static .metric { 
+            display: block; 
+            padding: 0.3rem 0.6rem; 
+            border-radius: 6px; 
+            font-size: 0.82rem;
+        }
+        .qa-metrics-static .metric span:first-child { font-weight: 700; margin-right: 0.4rem; }
+        .qa-metrics-static .metric.layout { background: rgba(37, 99, 235, 0.08); color: #1d4ed8; }
+        .qa-metrics-static .metric.brand { background: rgba(100, 116, 139, 0.1); color: #475569; }
+        .qa-metrics-static .metric.print { background: rgba(16, 185, 129, 0.1); color: #047857; }
+
+        /* --- GROUPED CHECKLIST --- */
+        .qa-checklist-group {
+            margin-bottom: 1rem;
+        }
+        .qa-checklist-group:last-child {
+            margin-bottom: 0;
+        }
+        .qa-group-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0 0 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .qa-report-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.4rem;
+        }
+
+        .qa-report-list li {
+            padding-left: 1.4rem;
+            position: relative;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .qa-report-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-size: 0.85rem;
+            top: 0.08rem;
+        }
+
+        .qa-inspector .cv-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+            background-size: 36px 36px;
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .qa-inspector [data-qa-label] {
+            position: relative;
+        }
+
+        .qa-inspector [data-qa-label]::after {
+            content: attr(data-qa-label);
+            position: absolute;
+            top: 0.7rem;
+            right: 0.7rem;
+            font-size: 0.68rem;
+            color: #2563eb;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(37, 99, 235, 0.24);
+            border-radius: 999px;
+            padding: 0.18rem 0.5rem;
+            z-index: 2;
+        }
+
+        .qa-inspector .profile-card,
+        .qa-inspector .skill-tag,
+        .qa-inspector .item,
+        .qa-inspector .contact-pills {
+            outline: 1px dashed rgba(37, 99, 235, 0.24);
+            outline-offset: 14px;
+        }
+
+        .qa-inspector .qa-report-card {
+            border-left: 3px solid #2563eb;
+        }
+
+        .control-button[aria-pressed="true"] {
+            background-color: rgba(37, 99, 235, 0.12);
+            border-color: rgba(37, 99, 235, 0.28);
+            color: #1e40af;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .control-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .control-input,
+        .control-button {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-soft);
+            background: #fff;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: border-color 0.16s ease, background-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+            text-align: left;
+        }
+
+        .control-input:focus-visible,
+        .control-button:focus-visible,
+        .pill:focus-visible {
+            outline: 2px solid rgba(37, 99, 235, 0.25);
+            outline-offset: 2px;
+        }
+
+        .control-button:hover,
+        .control-input:hover {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+            box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .control-button:active,
+        .control-input:active,
+        .pill:active {
+            transform: translateY(0);
+        }
+
+        .contact-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            max-width: 100%;
+            padding: 0.45rem 0.9rem;
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-soft);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: border-color 0.16s ease, background-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+            overflow-wrap: anywhere;
+        }
+
+        .pill:hover {
+            background-color: var(--accent-light);
+            border-color: #bfdbfe;
+            color: var(--accent);
+            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .copy-btn {
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        .body-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .main-col {
+            padding: 3rem;
+            border-right: 1px solid var(--border-soft);
+            min-width: 0;
+        }
+
+        .side-col {
+            padding: 3rem;
+            background-color: #fafaf9;
+            min-width: 0;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-label {
+            display: none;
+            position: absolute;
+            top: -1.2rem;
+            left: 0;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #4f46e5;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .qa-inspector .section-label {
+            display: inline-block;
+        }
+
+        .qa-inspector .section {
+            outline: 1px solid rgba(99, 102, 241, 0.16);
+            outline-offset: 10px;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-soft);
+        }
+
+        .paragraph {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        .portfolio-note {
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .portfolio-note .section-title {
+            margin-bottom: 0.75rem;
+        }
+
+        .item {
+            margin-bottom: 2rem;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.4rem;
+            flex-wrap: wrap;
+            min-width: 0;
+        }
+
+        .item-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            background: var(--bg-body);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .item-subtitle {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1.3rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            overflow-wrap: anywhere;
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            top: 0;
+        }
+
+        .focus-list {
+            display: grid;
+            gap: 0.55rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .focus-list li {
+            position: relative;
+            padding-left: 1.15rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.45;
+            overflow-wrap: anywhere;
+        }
+
+        .focus-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 0.42rem;
+            height: 0.42rem;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.72);
+        }
+
+        .project-link {
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: underline;
+            text-decoration-color: rgba(37, 99, 235, 0.28);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.14em;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+            text-decoration-color: rgba(37, 99, 235, 0.52);
+        }
+
+        .portfolio-project-list li {
+            margin-bottom: 0.65rem;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            min-width: 0;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            color: var(--text-main);
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .cert-item {
+            margin-bottom: 1rem;
+        }
+
+        .cert-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .cert-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .footer {
+            display: none; /* Oculto por CSS en entorno web */
+        }
+
+        @media (max-width: 900px) {
+            .header {
+                padding: 1.8rem 2rem;
+            }
+
+            .body-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-col,
+            .side-col {
+                padding: 2rem;
+            }
+
+            .main-col {
+                border-right: none;
+                border-bottom: 1px solid var(--border-soft);
+            }
+
+            .qa-report {
+                padding: 1rem 2rem 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .cv-container,
+            .header,
+            .body-grid,
+            .main-col,
+            .side-col,
+            .section,
+            .item,
+            .qa-report,
+            .qa-report-card {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+            }
+
+            .header {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                padding: 1.25rem 1.25rem 1rem;
+            }
+
+            .header-info,
+            .header-side {
+                min-width: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .header-controls,
+            .profile-photo-wrapper {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .profile-card {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                align-items: flex-start;
+                justify-items: start;
+                gap: 0.75rem;
+                width: 100%;
+            }
+
+            .profile-photo {
+                width: 84px;
+                height: 84px;
+            }
+
+            .profile-details {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .contact-pills {
+                width: 100%;
+            }
+
+            .control-button,
+            .control-input {
+                padding: 0.75rem 0.9rem;
+                max-width: 100%;
+                white-space: normal;
+            }
+
+            .name {
+                font-size: 1.9rem;
+            }
+
+            .role {
+                font-size: 0.95rem;
+            }
+
+            .role,
+            .role-subtitle,
+            .ai-note,
+            .control-button,
+            .control-input {
+                overflow-wrap: anywhere;
+            }
+
+            .qa-missions {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 420px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            .cv-container {
+                border-radius: 12px;
+            }
+
+            .header {
+                padding: 1rem;
+            }
+
+            .main-col,
+            .side-col {
+                padding: 1.25rem;
+            }
+
+            .contact-pills {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+
+            .pill {
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+            }
+
+            .profile-card {
+                gap: 0.8rem;
+            }
+
+            .profile-photo {
+                width: 78px;
+                height: 78px;
+            }
+
+            .profile-tagline {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            html, body {
+                width: auto !important;
+                min-height: auto !important;
+                background: #fff !important;
+                color: #111827 !important;
+            }
+
+            body {
+                display: block;
+                padding: 0 !important;
+                margin: 0 auto !important;
+                font-size: 10.2px;
+                line-height: 1.32;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .cv-container {
+                width: 100% !important;
+                max-width: none !important;
+                min-height: auto !important;
+                margin: 0 auto !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                border: none !important;
+                overflow: visible !important;
+                display: block !important;
+            }
+
+            .header {
+                display: grid !important;
+                grid-template-columns: 1fr 170px !important;
+                align-items: start !important;
+                gap: 10px !important;
+                padding: 0 0 7px !important;
+                margin: 0 0 7px !important;
+                border-bottom: 1px solid #d1d5db !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .header-info { min-width: 0 !important; }
+            .header-side { width: 170px !important; min-width: 0 !important; align-items: stretch !important; }
+
+            .header-controls,
+            .qa-console,
+            .qa-scanner,
+            .qa-report,
+            .control-button,
+            .control-input,
+            .control-help,
+            .control-label {
+                display: none !important;
+            }
+
+            .name { font-size: 21px !important; line-height: 1.05 !important; margin: 0 0 3px !important; }
+            .role { font-size: 9.8px !important; line-height: 1.25 !important; margin: 0 0 2px !important; }
+            .role-subtitle { font-size: 8.4px !important; line-height: 1.25 !important; margin: 0 0 5px !important; color: #4b5563 !important; }
+            .ai-note { font-size: 8.6px !important; line-height: 1.35 !important; margin: 0 0 6px !important; max-width: none !important; }
+            .contact-pills { gap: 4px !important; }
+            .pill { padding: 2px 6px !important; border: 1px solid #cbd5e1 !important; font-size: 8.4px !important; line-height: 1.2 !important; color: #374151 !important; background: #fff !important; }
+            .profile-card { padding: 6px !important; gap: 7px !important; border-radius: 10px !important; box-shadow: none !important; background: #f8fafc !important; }
+            .profile-photo { width: 52px !important; height: 52px !important; border-radius: 10px !important; box-shadow: none !important; }
+            .profile-tagline { font-size: 8.8px !important; line-height: 1.25 !important; }
+            .profile-subtitle { font-size: 7.8px !important; line-height: 1.25 !important; }
+
+            .body-grid {
+                display: grid !important;
+                grid-template-columns: 1.3fr 0.9fr !important;
+                gap: 8px !important;
+                align-items: start !important;
+            }
+
+            .main-col,
+            .side-col { padding: 0 !important; border: none !important; background: #fff !important; }
+            .main-col { padding-right: 8px !important; border-right: 1px solid #e5e7eb !important; }
+            .side-col { padding-left: 8px !important; }
+            .section { margin-bottom: 7px !important; page-break-inside: auto !important; break-inside: auto !important; }
+            .portfolio-note { display: none !important; }
+            .item { margin-bottom: 5px !important; page-break-inside: avoid; break-inside: avoid; }
+            .section-title { font-size: 8px !important; margin-bottom: 5px !important; line-height: 1.15 !important; color: #4b5563 !important; }
+            .paragraph,
+            .bullet-list li,
+            .focus-list li { font-size: 8.1px !important; line-height: 1.28 !important; color: #374151 !important; }
+            .bullet-list li { margin-bottom: 3px !important; padding-left: 9px !important; }
+            .portfolio-project-list li { margin-bottom: 2px !important; }
+            .project-link { color: #111827 !important; text-decoration: none !important; }
+            .focus-list { gap: 3px !important; }
+            .focus-list li { padding-left: 9px !important; }
+            .focus-list li::before { width: 3px !important; height: 3px !important; }
+            .item-header { gap: 4px !important; margin-bottom: 2px !important; }
+            .item-title { font-size: 9px !important; line-height: 1.2 !important; }
+            .item-date,
+            .item-subtitle,
+            .cert-meta { font-size: 7.8px !important; line-height: 1.25 !important; }
+            .item-date { padding: 1px 5px !important; }
+            .tags-container { gap: 2px !important; }
+            .skill-tag { padding: 1.8px 4px !important; font-size: 6.9px !important; line-height: 1.18 !important; box-shadow: none !important; max-width: 100% !important; white-space: normal !important; }
+            .cert-item { margin-bottom: 4px !important; }
+            .cert-title { font-size: 8.3px !important; line-height: 1.25 !important; }
+
+            .footer {
+                display: flex !important; /* Visible only in PDF output */
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100% !important;
+                margin: 6px auto 0 !important;
+                padding: 5px 0 0 !important;
+                border-top: 1px solid #e5e7eb !important;
+                text-align: center !important;
+                font-size: 7.2px !important;
+                color: #6b7280 !important;
+            }
+
+            .qa-inspector .cv-container::before,
+            .qa-inspector .section-label,
+            .section-label { display: none !important; content: none !important; }
+            .qa-inspector .section,
+            .qa-inspector .profile-card,
+            .qa-inspector .skill-tag,
+            .qa-inspector .item,
+            .qa-inspector .contact-pills { outline: none !important; }
+            .qa-inspector [data-qa-label]::after { display: none !important; }
+            .asset-tooltip { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    
+    <header class="header" data-qa-label="visible">
+        <div class="header-info">
+            <span class="section-label" data-key="sectionHeaderLabel">HEADER</span>
+            <h1 class="name">Agustina Burelli</h1>
+            <h2 class="role" data-key="role">Junior Digital Production & QA Assistant</h2>
+            <p class="role-subtitle" data-key="roleSubtitle">Figma · Asset Review · Manual Testing · Jira · AI-assisted Workflows</p>
+            <p class="ai-note" data-key="aiNote">AI tools are used as support for organization, checklist drafting, and documentation. Final review is always manual and based on approved assets.</p>
+            <div class="contact-pills" data-qa-label="visible">
+                <span class="pill" data-key="location">Buenos Aires, Zona Oeste</span>
+                <button class="pill copy-btn" id="email-pill" type="button" aria-label="Copy email address">agustinaburellitj@gmail.com</button>
+                <span class="pill" data-key="phone">+54 11 2596 7991</span>
+                <a class="pill" href="https://github.com/agustinaburellitj-code" target="_blank" rel="noopener noreferrer" data-key="githubLabel">GitHub</a>
+                <a class="pill" href="https://github.com/agustinaburellitj-code/Agustina-Burelli-CV" target="_blank" rel="noopener noreferrer" data-key="portfolioLabel">Portfolio</a>
+            </div>
+        </div>
+
+        <div class="header-side">
+            <div class="profile-photo-wrapper">
+                <div class="profile-card" data-qa-label="visible">
+                    <picture>
+                        <source srcset="profile.webp" type="image/webp">
+                        <img src="profile.png" alt="Agustina Burelli profile photo" class="profile-photo" width="104" height="104" decoding="async" fetchpriority="high">
+                    </picture>
+                    <div class="profile-details">
+                        <p class="profile-tagline" data-key="profileTagline">Junior production and QA support profile</p>
+                        <p class="profile-subtitle" data-key="profileSubtitle">Digital support · Asset review · Manual testing</p>
+                    </div>
+                </div>
+                <div class="asset-tooltip" data-key="photoTooltip">
+                    Profile Image
+                    Format: PNG / Web optimized
+                    Alt text: Present
+                    Crop: Reviewed
+                    Usage: Profile asset reviewed
+                </div>
+            </div>
+
+            <div class="header-controls">
+                <div class="control-group">
+                    <label for="language-select" class="control-label" data-key="languageLabel">Language</label>
+                    <select id="language-select" class="control-input" aria-label="Select language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+                <button class="control-button" id="qa-toggle" type="button" aria-pressed="false" data-key="qaButton">Show QA Checklist</button>
+                <p class="control-help" data-key="qaMicrocopy">Optional checklist view for layout, content, assets, responsive behavior, and print-readiness review.</p>
+                <button class="control-button" id="print-btn" type="button" data-key="printButton">Print / Save PDF</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="qa-report" id="qa-report" aria-hidden="true">
+            <div class="qa-report-card">
+                <div class="qa-report-header">
+                    <h3 class="qa-report-title" data-key="qaReportTitle">QA Checklist View</h3>
+                    <span class="qa-status" data-key="qaStatusText">Optional review checklist</span>
+                </div>
+                
+                <div class="qa-metrics-static">
+                    <div class="metric layout"><span data-key="qaMetricContrastLabel">[Safe Area / Spacing Check]</span><span data-key="qaMetricContrastValue">Content stays inside readable margins for screen and PDF export.</span></div>
+                    <div class="metric brand"><span data-key="qaMetricAssetsLabel">[Assets]</span><span data-key="qaMetricAssetsValue">Source review</span></div>
+                    <div class="metric print"><span data-key="qaMetricLayoutLabel">[PDF]</span><span data-key="qaMetricLayoutValue">Clean output</span></div>
+                </div>
+
+                <div class="qa-checklist-group">
+                    <h4 class="qa-group-title" data-key="qaCheckCat1">Content & Brand</h4>
+                    <ul class="qa-report-list">
+                        <li data-key="qaCheck1_1">Copy reviewed for clarity</li>
+                        <li data-key="qaCheck1_2">AI support does not replace manual review</li>
+                    </ul>
+                </div>
+                <div class="qa-checklist-group">
+                    <h4 class="qa-group-title" data-key="qaCheckCat2">Assets</h4>
+                    <ul class="qa-report-list">
+                        <li data-key="qaCheck2_1">Source materials checked</li>
+                        <li data-key="qaCheck2_2">Outdated or duplicated assets avoided</li>
+                    </ul>
+                </div>
+                <div class="qa-checklist-group">
+                    <h4 class="qa-group-title" data-key="qaCheckCat3">Layout & Export</h4>
+                    <ul class="qa-report-list">
+                        <li data-key="qaCheck3_1">Responsive layout checked</li>
+                        <li data-key="qaCheck3_2">PDF output stays clean</li>
+                    </ul>
+                </div>
+                <div class="qa-checklist-group">
+                    <h4 class="qa-group-title" data-key="qaCheckCat4">Workflow & Handoff</h4>
+                    <ul class="qa-report-list">
+                        <li data-key="qaCheck4_1">File names and version references organized</li>
+                        <li data-key="qaCheck4_2">Notes prepared for ticket-based review</li>
+                        <li data-key="qaCheck4_3">Portfolio projects support the same QA and handoff workflow</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="body-grid">
+        
+        <div class="main-col">
+            <section class="section" data-section="summary" data-qa-label="clear content">
+                <span class="section-label" data-key="labelSummary">SUMMARY</span>
+                <h3 class="section-title" data-key="profileTitle">Profile Summary</h3>
+                <p class="paragraph" data-key="profileText">Systems student at UTN and Testing Master trainee at Fundación Empujar IT, with a junior profile focused on digital production support, asset review, visual QA, manual testing, and organized handoffs. Comfortable working with Figma, checklists, file naming, Jira/ticket-based workflows, and AI-assisted documentation with human review.</p>
+            </section>
+
+            <section class="section" data-section="can-help" data-qa-label="support">
+                <span class="section-label" data-key="helpLabel">SUPPORT</span>
+                <h3 class="section-title" data-key="helpTitle">What I can help with</h3>
+                <ul class="focus-list">
+                    <li data-key="help1">Reviewing assets before upload or delivery</li>
+                    <li data-key="help2">Checking file names, versions, formats, and visual consistency</li>
+                    <li data-key="help3">Supporting Jira/ticket-based workflows</li>
+                    <li data-key="help4">Preparing simple mockups or asset adaptations in Figma</li>
+                    <li data-key="help5">Supporting AI-assisted documentation with human review</li>
+                    <li data-key="help6">Reporting basic issues found during manual review</li>
+                </ul>
+            </section>
+
+            <section class="section portfolio-projects" data-section="portfolio-projects" data-qa-label="practice projects">
+                <span class="section-label" data-key="portfolioProjectsLabel">PORTFOLIO</span>
+                <h3 class="section-title" data-key="portfolioProjectsTitle">Portfolio Projects</h3>
+                <ul class="bullet-list portfolio-project-list">
+                    <li>
+                        <a class="project-link" href="https://agustinaburellitj-code.github.io/Digital-Asset-QA-Checklist/" target="_blank" rel="noopener noreferrer">Asset QA Review Sheet</a><span data-key="portfolioProject1">: checklist-based tool for reviewing asset details, file naming, issues, and handoff notes.</span>
+                    </li>
+                    <li>
+                        <a class="project-link" href="https://agustinaburellitj-code.github.io/Mockup-Adaptation-Matrix-/" target="_blank" rel="noopener noreferrer">Mockup Adaptation Matrix</a><span data-key="portfolioProject2">: sample campaign board for tracking format adaptations, sizes, versions, statuses, and QA notes.</span>
+                    </li>
+                    <li>
+                        <a class="project-link" href="https://agustinaburellitj-code.github.io/Ticket-Handoff-Notes-Generator/" target="_blank" rel="noopener noreferrer">Ticket Handoff Notes Generator</a><span data-key="portfolioProject3">: tool for preparing clear ticket notes with changes, QA checks, issues, and next steps.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section" data-section="experience" data-qa-label="transferable">
+                <span class="section-label" data-key="labelExperience">EXPERIENCE</span>
+                <h3 class="section-title" data-key="experienceTitle">Work Experience</h3>
+                <div class="item">
+                    <div class="item-header">
+                        <h4 class="item-title" data-key="experienceRole">Digital Production & Administrative Support</h4>
+                        <span class="item-date" data-key="experienceDates">2022 – 2024</span>
+                    </div>
+                    <div class="item-subtitle" data-key="experienceCompany">Wussler Construcciones</div>
+                    <ul class="bullet-list">
+                        <li data-key="exp1">Prepared and reviewed client-facing dossiers and brochures, organizing digital folders, file names, and version references for internal review.</li>
+                        <li data-key="exp2">Checked formats, image quality, layout consistency, and missing information before sharing client-facing materials.</li>
+                        <li data-key="exp3">Used checklist-based visual QA to catch format errors and asset discrepancies before delivery.</li>
+                        <li data-key="exp4">Assisted team handoffs by keeping project folders, references, and ticket updates neatly arranged.</li>
+                        <li data-key="exp5">Checked source materials to avoid outdated, duplicated, or incorrect visual assets.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section" data-section="education" data-qa-label="training">
+                <span class="section-label" data-key="labelEducation">EDUCATION</span>
+                <h3 class="section-title" data-key="educationTitle">Education</h3>
+                <div class="item">
+                    <div class="item-header">
+                        <h4 class="item-title" data-key="educationDegree">Information Systems Engineering</h4>
+                        <span class="item-date" data-key="educationDates">2023 – Present</span>
+                    </div>
+                    <div class="item-subtitle" data-key="educationSchool">Universidad Tecnológica Nacional (UTN)</div>
+                    <p class="paragraph" data-key="educationText">Training in system architecture, logical problem-solving, and software testing.</p>
+                </div>
+            </section>
+
+            <section class="section portfolio-note" data-section="html-resume">
+                <span class="section-label" data-key="htmlResumeLabel">HTML RESUME</span>
+                <h3 class="section-title" data-key="htmlResumeTitle">Why this resume is built in HTML</h3>
+                <p class="paragraph" data-key="htmlResumeText">This resume was built as a small interactive portfolio piece to show front-end structure, responsive layout, print-ready output, bilingual content, and QA-style review thinking. The linked projects extend the same focus into asset review, mockup adaptation, and ticket handoff notes.</p>
+            </section>
+        </div>
+
+        <aside class="side-col" data-qa-label="grouped">
+            <section class="section" data-section="design-production" data-qa-label="grouped">
+                <span class="section-label" data-key="digitalProductionLabel">PRODUCTION</span>
+                <h3 class="section-title" data-key="digitalProductionTitle">Design & Production</h3>
+                <div class="tags-container">
+                    <span class="skill-tag" data-key="designTag1">Figma (Working Knowledge)</span>
+                    <span class="skill-tag" data-key="designTag2">Photoshop (Familiar)</span>
+                    <span class="skill-tag" data-key="designTag3">Adobe Express / Firefly</span>
+                    <span class="skill-tag" data-key="designTag4">Mockup Adaptation</span>
+                    <span class="skill-tag" data-key="designTag5">Asset Resizing</span>
+                    <span class="skill-tag" data-key="designTag6">Export Preparation</span>
+                    <span class="skill-tag" data-key="designTag7">Video Editing: CapCut / Premiere</span>
+                    <span class="skill-tag" data-key="designTag8">Visual QA</span>
+                </div>
+            </section>
+
+            <section class="section" data-section="qa-testing" data-qa-label="junior basics">
+                <span class="section-label" data-key="qaTestingLabel">QA / TESTING</span>
+                <h3 class="section-title" data-key="qaTestingTitle">QA / Testing</h3>
+                <div class="tags-container">
+                    <span class="skill-tag" data-key="workflowTag1">Manual Testing Foundations</span>
+                    <span class="skill-tag" data-key="workflowTag2">Checklist-Based Review</span>
+                    <span class="skill-tag" data-key="workflowTag3">Issue Reporting</span>
+                    <span class="skill-tag" data-key="workflowTag4">Requirement Validation</span>
+                    <span class="skill-tag" data-key="workflowTag5">Visual Consistency Checks</span>
+                    <span class="skill-tag" data-key="workflowTag6">Responsive Review</span>
+                </div>
+            </section>
+
+            <section class="section" data-section="workflow-documentation" data-qa-label="organized">
+                <span class="section-label" data-key="workflowDocsLabel">WORKFLOW</span>
+                <h3 class="section-title" data-key="workflowDocsTitle">Workflow & Documentation</h3>
+                <div class="tags-container">
+                    <span class="skill-tag" data-key="docsTag1">Jira Navigation</span>
+                    <span class="skill-tag" data-key="docsTag2">Notion</span>
+                    <span class="skill-tag" data-key="docsTag3">Confluence (Familiar)</span>
+                    <span class="skill-tag" data-key="docsTag4">Google Workspace</span>
+                    <span class="skill-tag" data-key="docsTag5">Microsoft Excel</span>
+                    <span class="skill-tag" data-key="docsTag6">File Naming</span>
+                    <span class="skill-tag" data-key="docsTag7">Version Tracking</span>
+                </div>
+            </section>
+
+            <section class="section" data-section="ai-web-basics" data-qa-label="support">
+                <span class="section-label" data-key="aiWebLabel">AI / WEB</span>
+                <h3 class="section-title" data-key="aiWebTitle">AI-assisted Tools & Web</h3>
+                <div class="tags-container">
+                    <span class="skill-tag" data-key="aiTag1">Cursor & Codex</span>
+                    <span class="skill-tag" data-key="aiTag2">GitHub Copilot</span>
+                    <span class="skill-tag" data-key="aiTag3">Prompting for Docs</span>
+                    <span class="skill-tag" data-key="aiTag4">AI-assisted Production</span>
+                    <span class="skill-tag" data-key="aiTag5">Human Review & QA</span>
+                    <span class="skill-tag" data-key="aiTag6">HTML</span>
+                    <span class="skill-tag" data-key="aiTag7">CSS</span>
+                    <span class="skill-tag" data-key="aiTag8">JavaScript</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <span class="section-label" data-key="certificationsLabel">CERTIFICATIONS</span>
+                <h3 class="section-title" data-key="certificationsTitle">Certifications</h3>
+                <div class="cert-item">
+                    <span class="cert-title">Testing Master</span>
+                    <span class="cert-meta">Fundación Empujar IT | 2025</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-title">Intro to Data Analytics</span>
+                    <span class="cert-meta">Chicas en Tecnología | 2025</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-title">Basic Cybersecurity</span>
+                    <span class="cert-meta">Academia BA | 2024</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <span class="section-label" data-key="languagesLabel">LANGUAGES</span>
+                <h3 class="section-title" data-key="languagesTitle">Languages</h3>
+                <div class="cert-item">
+                    <span class="cert-title" data-key="lang1Title">Spanish</span>
+                    <span class="cert-meta" data-key="lang1Meta">Native</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-title" data-key="lang2Title">English</span>
+                    <span class="cert-meta" data-key="lang2Meta">Technical Reading Proficiency</span>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    </main>
+    
+    <footer class="footer" data-key="footerText" data-qa-label="PDF clean">Junior Digital Production & QA Assistant · Print-ready CV</footer>
+
+</div>
+
+<div class="qa-scanner" aria-hidden="true" role="img"></div>
+<div class="qa-console" aria-hidden="true" aria-live="polite">
+    <div class="qa-console-header" data-key="qaConsoleHeader">Review Notes</div>
+    <ul class="qa-log" aria-hidden="false"></ul>
+</div>
+
+<script>
+    console.log("QA note: Thanks for reviewing this resume. It was built to demonstrate responsive layout, bilingual content, print readiness, and digital production QA thinking.");
+
+    const translations = {
+        en: {
+            languageLabel: 'Language',
+            qaButton: 'Show QA Checklist',
+            qaButtonActive: 'Hide QA Checklist',
+            printButton: 'Print / Save PDF',
+            role: 'Junior Digital Production & QA Assistant',
+            roleSubtitle: 'Figma · Asset Review · Manual Testing · Jira · AI-assisted Workflows',
+            aiNote: 'AI tools are used as support for organization, checklist drafting, and documentation. Final review is always manual and based on approved assets.',
+            location: 'Buenos Aires, Zona Oeste',
+            phone: '+54 11 2596 7991',
+            githubLabel: 'GitHub',
+            portfolioLabel: 'Portfolio',
+            profileTitle: 'Profile Summary',
+            profileText: 'Systems student at UTN and Testing Master trainee at Fundación Empujar IT, with a junior profile focused on digital production support, asset review, visual QA, manual testing, and organized handoffs. Comfortable working with Figma, checklists, file naming, Jira/ticket-based workflows, and AI-assisted documentation with human review.',
+            labelSummary: 'SUMMARY',
+            experienceTitle: 'Work Experience',
+            experienceRole: 'Digital Production & Administrative Support',
+            experienceDates: '2022 – 2024',
+            experienceCompany: 'Wussler Construcciones',
+            exp1: 'Prepared and reviewed client-facing dossiers and brochures, organizing digital folders, file names, and version references for internal review.',
+            exp2: 'Checked formats, image quality, layout consistency, and missing information before sharing client-facing materials.',
+            exp3: 'Used checklist-based visual QA to catch format errors and asset discrepancies before delivery.',
+            exp4: 'Assisted team handoffs by keeping project folders, references, and ticket updates neatly arranged.',
+            exp5: 'Checked source materials to avoid outdated, duplicated, or incorrect visual assets.',
+            labelExperience: 'EXPERIENCE',
+            helpLabel: 'SUPPORT',
+            helpTitle: 'What I can help with',
+            help1: 'Reviewing assets before upload or delivery',
+            help2: 'Checking file names, versions, formats, and visual consistency',
+            help3: 'Supporting Jira/ticket-based workflows',
+            help4: 'Preparing simple mockups or asset adaptations in Figma',
+            help5: 'Supporting AI-assisted documentation with human review',
+            help6: 'Reporting basic issues found during manual review',
+            portfolioProjectsLabel: 'PORTFOLIO',
+            portfolioProjectsTitle: 'Portfolio Projects',
+            portfolioProject1: ': checklist-based tool for reviewing asset details, file naming, issues, and handoff notes.',
+            portfolioProject2: ': sample campaign board for tracking format adaptations, sizes, versions, statuses, and QA notes.',
+            portfolioProject3: ': tool for preparing clear ticket notes with changes, QA checks, issues, and next steps.',
+            educationTitle: 'Education',
+            educationDegree: 'Information Systems Engineering',
+            educationDates: '2023 – Present',
+            educationSchool: 'Universidad Tecnológica Nacional (UTN)',
+            educationText: 'Training in system architecture, logical problem-solving, and software testing.',
+            labelEducation: 'EDUCATION',
+            labelSkills: 'SKILLS',
+            digitalProductionLabel: 'DESIGN',
+            digitalProductionTitle: 'Design & Production',
+            qaFocusLabel: 'QA FOCUS',
+            qaFocusTitle: 'QA Focus Areas',
+            qaFocus1: 'Logo placement and safe areas',
+            qaFocus2: 'Text consistency and typos',
+            qaFocus3: 'Asset dimensions and aspect ratios',
+            qaFocus4: 'File naming and version control',
+            qaFocus5: 'Approved-source asset usage',
+            qaFocus6: 'Export readiness before delivery',
+            visualQaLabel: 'DESIGN',
+            visualQaTitle: 'Design & Production',
+            designTag1: 'Figma (Working Knowledge)',
+            designTag2: 'Photoshop (Familiar)',
+            designTag3: 'Adobe Express / Firefly',
+            designTag4: 'Mockup Adaptation',
+            designTag5: 'Asset Resizing',
+            designTag6: 'Export Preparation',
+            designTag7: 'Video Editing: CapCut / Premiere',
+            designTag8: 'Visual QA',
+            workflowLabel: 'WORKFLOW',
+            workflowTitle: 'Workflow, Testing & Delivery',
+            qaTestingLabel: 'QA / TESTING',
+            qaTestingTitle: 'QA / Testing',
+            workflowTag1: 'Manual Testing Foundations',
+            workflowTag2: 'Checklist-Based Review',
+            workflowTag3: 'Issue Reporting',
+            workflowTag4: 'Requirement Validation',
+            workflowTag5: 'Visual Consistency Checks',
+            workflowTag6: 'Responsive Review',
+            brandSafetyLabel: 'REVIEW NOTES',
+            brandSafetyTitle: 'Asset Review & AI Support',
+            brandTag1: 'Approved Asset Check',
+            brandTag2: 'Brand Consistency Basics',
+            brandTag3: 'AI Support Review',
+            brandTag4: 'Source Checks',
+            brandTag5: 'Export Preparation',
+            brandTag6: 'Checklist Review',
+            workflowDocsLabel: 'WORKFLOW',
+            workflowDocsTitle: 'Workflow & Documentation',
+            docsTag1: 'Jira Navigation',
+            docsTag2: 'Notion',
+            docsTag3: 'Confluence (Familiar)',
+            docsTag4: 'Google Workspace',
+            docsTag5: 'Microsoft Excel',
+            docsTag6: 'File Naming',
+            docsTag7: 'Version Tracking',
+            aiWebLabel: 'AI / WEB',
+            aiWebTitle: 'AI-assisted Tools & Web',
+            aiTag1: 'Cursor & Codex',
+            aiTag2: 'GitHub Copilot',
+            aiTag3: 'Prompting for Docs',
+            aiTag4: 'AI-assisted Production',
+            aiTag5: 'Human Review & QA',
+            aiTag6: 'HTML',
+            aiTag7: 'CSS',
+            aiTag8: 'JavaScript',
+            toolsTitle: 'Tools',
+            toolsTag1: 'Figma',
+            toolsTag2: 'Jira Navigation',
+            toolsTag3: 'Google Workspace',
+            toolsTag4: 'Excel',
+            toolsTag5: 'Notion',
+            toolsTag6: 'Basic Photoshop',
+            certificationsTitle: 'Certifications',
+            languagesTitle: 'Languages',
+            lang1Title: 'Spanish',
+            lang1Meta: 'Native',
+            lang2Title: 'English',
+            lang2Meta: 'Technical Reading Proficiency',
+            profileTagline: 'Junior production and QA support profile',
+            profileSubtitle: 'Digital support · Asset review · Manual testing',
+            sectionHeaderLabel: 'HEADER',
+            toolsLabel: 'TOOLS',
+            certificationsLabel: 'CERTIFICATIONS',
+            languagesLabel: 'LANGUAGES',
+            htmlResumeLabel: 'HTML RESUME',
+            htmlResumeTitle: 'Why this resume is built in HTML',
+            htmlResumeText: 'This resume was built as a small interactive portfolio piece to show front-end structure, responsive layout, print-ready output, bilingual content, and QA-style review thinking. The linked projects extend the same focus into asset review, mockup adaptation, and ticket handoff notes.',
+            qaReportTitle: 'QA Checklist View',
+            qaStatusText: 'Optional review checklist',
+            qaReportText: 'This optional view shows how the resume was reviewed: content clarity, layout consistency, asset notes, responsive behavior, and clean PDF output.',
+            qaCheckCat1: 'Content & Brand',
+            qaCheck1_1: 'Copy reviewed for clarity',
+            qaCheck1_2: 'AI support does not replace manual review',
+            qaCheckCat2: 'Assets',
+            qaCheck2_1: 'Source materials checked',
+            qaCheck2_2: 'Outdated or duplicated assets avoided',
+            qaCheckCat3: 'Layout & Export',
+            qaCheck3_1: 'Responsive layout checked',
+            qaCheck3_2: 'PDF output stays clean',
+            qaCheckCat4: 'Workflow & Handoff',
+            qaCheck4_1: 'File names and version references organized',
+            qaCheck4_2: 'Notes prepared for ticket-based review',
+            qaCheck4_3: 'Portfolio projects support the same QA and handoff workflow',
+            mission1Title: 'Mission 01',
+            mission1Text: 'Check spacing, alignment, and readable structure.',
+            mission2Title: 'Mission 02',
+            mission2Text: 'Review copy, naming, and version clarity.',
+            mission3Title: 'Mission 03',
+            mission3Text: 'Use approved assets and simple visual checks.',
+            mission4Title: 'Mission 04',
+            mission4Text: 'Keep handoff notes clear for ticket-based work.',
+            qaMicrocopy: 'Optional checklist view for layout, content, assets, responsive behavior, and print-readiness review.',
+            qaConsoleHeader: 'Review Notes',
+            qaMetricContrastLabel: '[Safe Area / Spacing Check]',
+            qaMetricContrastValue: 'Content stays inside readable margins for screen and PDF export.',
+            qaMetricAssetsLabel: '[Assets]',
+            qaMetricAssetsValue: 'Source review',
+            qaMetricLayoutLabel: '[PDF]',
+            qaMetricLayoutValue: 'Clean output',
+            qaLogStart: 'Opening QA checklist view...',
+            qaLogContrast: 'Layout: Safe area & margin audit',
+            qaLogAssets: 'Assets: Quality & metadata check',
+            qaLogLayout: 'PDF: Ready for clean export',
+            qaLogChecklist: 'Bilingual alignment check verified',
+            qaLogDone: 'Checklist view active.',
+            qaChecklistTitle: 'QA Checklist',
+            check1: 'Layout consistency',
+            check2: 'Copy clarity',
+            check3: 'Asset review',
+            check4: 'Responsive check',
+            check5: 'Export ready',
+            footerText: 'Junior Digital Production & QA Assistant · Print-ready CV',
+            copiedEmail: 'Email copied',
+            copiedEmailEs: 'Email copied',
+            photoTooltip: 'Profile Image\nFormat: PNG / Web optimized\nAlt text: Present\nCrop: Reviewed\nUsage: Profile asset reviewed'
+        },
+        es: {
+            languageLabel: 'Idioma',
+            qaButton: 'Ver checklist QA',
+            qaButtonActive: 'Ocultar checklist QA',
+            printButton: 'Imprimir / PDF',
+            role: 'Asistente Junior de Producción Digital y QA',
+            roleSubtitle: 'Figma · Revisión de assets · Testing manual · Jira · Flujos asistidos con IA',
+            aiNote: 'Las herramientas de IA se usan como apoyo para organización, armado de checklists y documentación. La revisión final siempre es manual y se basa en activos aprobados.',
+            location: 'Buenos Aires, Zona Oeste',
+            phone: '+54 11 2596 7991',
+            githubLabel: 'GitHub',
+            portfolioLabel: 'Portfolio',
+            profileTitle: 'Resumen profesional',
+            profileText: 'Estudiante de Sistemas en UTN y trainee de Testing Master en Fundación Empujar IT, con perfil junior enfocado en soporte de producción digital, revisión de assets, QA visual, testing manual y handoffs organizados. Me siento cómoda trabajando con Figma, checklists, nomenclatura de archivos, flujos con Jira/tickets y documentación asistida con IA con revisión humana.',
+            labelSummary: 'RESUMEN',
+            experienceTitle: 'Experiencia laboral',
+            experienceRole: 'Soporte Digital y Administrativo',
+            experienceDates: '2022 – 2024',
+            experienceCompany: 'Wussler Construcciones',
+            exp1: 'Preparé y revisé dossiers y brochures para clientes, organizando carpetas digitales, nombres de archivo y referencias de versión para revisión interna.',
+            exp2: 'Controlé formatos, calidad de imagen, consistencia de layout e información faltante antes de compartir materiales.',
+            exp3: 'Usé checklists de QA visual para detectar errores de formato y discrepancias antes de la entrega.',
+            exp4: 'Asistí en el traspaso de información manteniendo ordenadas las carpetas de proyectos, referencias y actualizaciones de tickets.',
+            exp5: 'Revisé materiales fuente para evitar el uso de activos visuales desactualizados, duplicados o incorrectos.',
+            labelExperience: 'EXPERIENCIA',
+            helpLabel: 'SOPORTE',
+            helpTitle: 'En qué puedo ayudar',
+            help1: 'Revisar assets antes de subirlos o entregarlos',
+            help2: 'Controlar nombres de archivo, versiones, formatos y consistencia visual',
+            help3: 'Acompañar flujos de trabajo con Jira o tickets',
+            help4: 'Preparar adaptaciones simples de mockups o assets en Figma',
+            help5: 'Apoyar documentación asistida con IA con revisión humana',
+            help6: 'Reportar errores básicos encontrados durante revisión manual',
+            portfolioProjectsLabel: 'PORTFOLIO',
+            portfolioProjectsTitle: 'Proyectos de portfolio',
+            portfolioProject1: ': herramienta con checklist para revisar detalles de assets, naming, issues y notas de handoff.',
+            portfolioProject2: ': tablero de campaña ficticia para organizar adaptaciones, tamaños, versiones, estados y notas QA.',
+            portfolioProject3: ': herramienta para preparar notas claras de ticket con cambios, QA checks, incidencias y próximos pasos.',
+            educationTitle: 'Educación',
+            educationDegree: 'Ingeniería en Sistemas de Información',
+            educationDates: '2023 – Actualidad',
+            educationSchool: 'Universidad Tecnológica Nacional (UTN)',
+            educationText: 'Formación en arquitectura de sistemas, resolución lógica de problemas y pruebas de software.',
+            labelEducation: 'EDUCACIÓN',
+            labelSkills: 'HABILIDADES',
+            digitalProductionLabel: 'DISEÑO',
+            digitalProductionTitle: 'Diseño y Producción',
+            qaFocusLabel: 'FOCO QA',
+            qaFocusTitle: 'Áreas de foco QA',
+            qaFocus1: 'Ubicación de logos y áreas seguras',
+            qaFocus2: 'Consistencia de textos y errores',
+            qaFocus3: 'Dimensiones y proporciones',
+            qaFocus4: 'Nomenclatura y control de versiones',
+            qaFocus5: 'Uso de activos aprobados',
+            qaFocus6: 'Preparación de exportes antes de entrega',
+            visualQaLabel: 'DISEÑO',
+            visualQaTitle: 'Diseño y Producción',
+            designTag1: 'Figma (Conocimiento práctico)',
+            designTag2: 'Photoshop (Familiarizada)',
+            designTag3: 'Adobe Express / Firefly',
+            designTag4: 'Adaptación de mockups',
+            designTag5: 'Redimensión de assets',
+            designTag6: 'Preparación de exportes',
+            designTag7: 'Edición de video: CapCut / Premiere',
+            designTag8: 'QA visual',
+            workflowLabel: 'WORKFLOW',
+            workflowTitle: 'Flujo, Testing y Entrega',
+            qaTestingLabel: 'QA / TESTING',
+            qaTestingTitle: 'QA / Testing',
+            workflowTag1: 'Fundamentos de Testing Manual',
+            workflowTag2: 'Revisión con checklists',
+            workflowTag3: 'Reporte de incidencias',
+            workflowTag4: 'Validación de requisitos',
+            workflowTag5: 'Chequeo de consistencia visual',
+            workflowTag6: 'Revisión responsive',
+            brandSafetyLabel: 'NOTAS DE REVISIÓN',
+            brandSafetyTitle: 'Revisión de assets y apoyo con IA',
+            brandTag1: 'Chequeo de assets aprobados',
+            brandTag2: 'Consistencia de marca básica',
+            brandTag3: 'Revisión de apoyo con IA',
+            brandTag4: 'Chequeos de fuente',
+            brandTag5: 'Preparación de exportes',
+            brandTag6: 'Revisión con checklists',
+            workflowDocsLabel: 'WORKFLOW',
+            workflowDocsTitle: 'Workflow y Documentación',
+            docsTag1: 'Navegación en Jira',
+            docsTag2: 'Notion',
+            docsTag3: 'Confluence (Familiarizada)',
+            docsTag4: 'Google Workspace',
+            docsTag5: 'Microsoft Excel',
+            docsTag6: 'Nomenclatura de archivos',
+            docsTag7: 'Seguimiento de versiones',
+            aiWebLabel: 'IA / WEB',
+            aiWebTitle: 'IA y Web',
+            aiTag1: 'Cursor & Codex',
+            aiTag2: 'GitHub Copilot',
+            aiTag3: 'Prompts para documentación',
+            aiTag4: 'Producción asistida con IA',
+            aiTag5: 'Revisión humana y QA',
+            aiTag6: 'HTML',
+            aiTag7: 'CSS',
+            aiTag8: 'JavaScript',
+            toolsTitle: 'Herramientas',
+            toolsTag1: 'Figma',
+            toolsTag2: 'Navegación en Jira',
+            toolsTag3: 'Google Workspace',
+            toolsTag4: 'Excel',
+            toolsTag5: 'Notion',
+            toolsTag6: 'Photoshop (Familiarizada)',
+            certificationsTitle: 'Certificaciones',
+            languagesTitle: 'Idiomas',
+            lang1Title: 'Español',
+            lang1Meta: 'Nativo',
+            lang2Title: 'Inglés',
+            lang2Meta: 'Lectura técnica y comprensión de textos',
+            profileTagline: 'Perfil junior de soporte digital y QA',
+            profileSubtitle: 'Soporte digital · Revisión de assets · Testing manual',
+            sectionHeaderLabel: 'ENCABEZADO',
+            toolsLabel: 'HERRAMIENTAS',
+            certificationsLabel: 'CERTIFICACIONES',
+            languagesLabel: 'IDIOMAS',
+            htmlResumeLabel: 'CV HTML',
+            htmlResumeTitle: 'Por qué este CV está hecho en HTML',
+            htmlResumeText: 'Este CV fue construido como una pequeña pieza interactiva de portfolio para mostrar estructura front-end, layout responsive, salida lista para PDF, contenido bilingüe y criterio de revisión estilo QA. Los proyectos vinculados extienden ese enfoque hacia revisión de assets, adaptación de mockups y notas de handoff para tickets.',
+            qaReportTitle: 'Vista de checklist QA',
+            qaStatusText: 'Checklist opcional de revisión',
+            qaReportText: 'Esta vista opcional muestra cómo fue revisado el CV: claridad de contenido, consistencia de layout, notas sobre assets, comportamiento responsive y salida limpia a PDF.',
+            qaCheckCat1: 'Contenido y Marca',
+            qaCheck1_1: 'Textos revisados para claridad',
+            qaCheck1_2: 'El apoyo de IA no reemplaza la revisión manual',
+            qaCheckCat2: 'Activos visuales',
+            qaCheck2_1: 'Materiales fuente verificados',
+            qaCheck2_2: 'Activos desactualizados o duplicados evitados',
+            qaCheckCat3: 'Maquetado y Exportación',
+            qaCheck3_1: 'Layout responsive comprobado',
+            qaCheck3_2: 'La exportación a PDF se mantiene limpia',
+            qaCheckCat4: 'Workflow y Handoff',
+            qaCheck4_1: 'Nombres de archivo y referencias de versión organizados',
+            qaCheck4_2: 'Notas preparadas para revisión basada en tickets',
+            qaCheck4_3: 'Los proyectos de portfolio refuerzan el mismo flujo de QA y handoff',
+            mission1Title: 'Misión 01',
+            mission1Text: 'Revisar espaciado, alineación y estructura legible.',
+            mission2Title: 'Misión 02',
+            mission2Text: 'Revisar textos, naming y claridad de versión.',
+            mission3Title: 'Misión 03',
+            mission3Text: 'Usar activos aprobados y chequeos visuales simples.',
+            mission4Title: 'Misión 04',
+            mission4Text: 'Mantener notas claras para trabajo con tickets.',
+            qaMicrocopy: 'Vista opcional de checklist para revisar layout, contenido, assets, responsive y preparación para PDF.',
+            qaConsoleHeader: 'Notas de revisión',
+            qaMetricContrastLabel: '[Área segura / Revisión de espaciado]',
+            qaMetricContrastValue: 'El contenido se mantiene dentro de márgenes legibles para pantalla y exportación PDF.',
+            qaMetricAssetsLabel: '[Assets]',
+            qaMetricAssetsValue: 'Fuente revisada',
+            qaMetricLayoutLabel: '[PDF]',
+            qaMetricLayoutValue: 'Salida limpia',
+            qaLogStart: 'Abriendo vista de checklist QA...',
+            qaLogContrast: 'Layout: Auditoría de área segura y márgenes',
+            qaLogAssets: 'Assets: Control de calidad y metadatos',
+            qaLogLayout: 'PDF: Listo para exportación limpia',
+            qaLogChecklist: 'Verificación de alineación bilingüe completada',
+            qaLogDone: 'Vista de checklist lista.',
+            qaChecklistTitle: 'Checklist QA',
+            check1: 'Consistencia de layout',
+            check2: 'Claridad de texto',
+            check3: 'Revisión de activos',
+            check4: 'Chequeo responsive',
+            check5: 'Listo para exportar',
+            footerText: 'Asistente Junior de Producción Digital y QA · Listo para PDF',
+            copiedEmail: 'Email copiado',
+            copiedEmailEs: 'Email copiado',
+            photoTooltip: 'Imagen de perfil\nFormato: PNG / optimizado para web\nAlt text: presente\nRecorte: revisado\nUso: asset de perfil revisado'
+        }
+    };
+
+    const keys = [
+        'languageLabel','qaButton','qaButtonActive','printButton','role','roleSubtitle','aiNote','location','phone','githubLabel','portfolioLabel','profileTitle','profileText',
+        'labelSummary','experienceTitle','experienceRole','experienceDates','experienceCompany','exp1','exp2','exp3','exp4','exp5',
+        'labelExperience','helpLabel','helpTitle','help1','help2','help3','help4','help5','help6','portfolioProjectsLabel','portfolioProjectsTitle','portfolioProject1','portfolioProject2','portfolioProject3','educationTitle','educationDegree','educationDates','educationSchool','educationText','labelEducation',
+        'labelSkills','digitalProductionLabel','digitalProductionTitle','qaFocusLabel','qaFocusTitle','qaFocus1','qaFocus2','qaFocus3','qaFocus4','qaFocus5','qaFocus6',
+        'visualQaLabel','visualQaTitle','designTag1','designTag2','designTag3','designTag4','designTag5','designTag6','designTag7','designTag8',
+        'workflowLabel','workflowTitle','qaTestingLabel','qaTestingTitle','workflowTag1','workflowTag2','workflowTag3','workflowTag4','workflowTag5','workflowTag6',
+        'brandSafetyLabel','brandSafetyTitle','brandTag1','brandTag2','brandTag3','brandTag4','brandTag5','brandTag6',
+        'workflowDocsLabel','workflowDocsTitle','docsTag1','docsTag2','docsTag3','docsTag4','docsTag5','docsTag6','docsTag7',
+        'aiWebLabel','aiWebTitle','aiTag1','aiTag2','aiTag3','aiTag4','aiTag5','aiTag6','aiTag7','aiTag8',
+        'toolsLabel','toolsTitle','toolsTag1','toolsTag2','toolsTag3','toolsTag4','toolsTag5','toolsTag6',
+        'certificationsTitle','languagesTitle','lang1Title','lang1Meta','lang2Title','lang2Meta',
+        'profileTagline','profileSubtitle','sectionHeaderLabel','certificationsLabel','languagesLabel','htmlResumeLabel','htmlResumeTitle','htmlResumeText',
+        'qaReportTitle','qaStatusText','qaReportText',
+        'qaCheckCat1','qaCheck1_1','qaCheck1_2',
+        'qaCheckCat2','qaCheck2_1','qaCheck2_2',
+        'qaCheckCat3','qaCheck3_1','qaCheck3_2',
+        'qaCheckCat4','qaCheck4_1','qaCheck4_2','qaCheck4_3',
+        'qaMicrocopy','qaConsoleHeader',
+        'mission1Title','mission1Text','mission2Title','mission2Text','mission3Title','mission3Text','mission4Title','mission4Text',
+        'qaChecklistTitle','check1','check2','check3','check4','check5','footerText','photoTooltip',
+        'qaMetricContrastLabel','qaMetricContrastValue','qaMetricAssetsLabel','qaMetricAssetsValue','qaMetricLayoutLabel','qaMetricLayoutValue'
+    ];
+
+    const translateElements = () => {
+        const lang = localStorage.getItem('resumeLanguage') || 'en';
+        const translation = translations[lang] || translations.en;
+        keys.forEach(key => {
+            document.querySelectorAll(`[data-key="${key}"]`).forEach(node => {
+                if (node.tagName === 'DIV' && key === 'photoTooltip') {
+                    node.style.whiteSpace = 'pre-line';
+                }
+                node.textContent = translation[key] || node.textContent;
+            });
+        });
+    };
+
+    let _hasInitialLanguagePaint = false;
+
+    const setLanguage = (lang) => {
+        if (_hasInitialLanguagePaint) {
+            document.body.classList.add('is-translating');
+        }
+
+        localStorage.setItem('resumeLanguage', lang);
+        document.documentElement.lang = lang;
+        document.getElementById('language-select').value = lang;
+        translateElements();
+
+        const translation = translations[lang] || translations.en;
+        const qaButton = document.getElementById('qa-toggle');
+        if (qaButton) {
+            qaButton.textContent = document.body.classList.contains('qa-inspector') ? translation.qaButtonActive : translation.qaButton;
+        }
+
+        if (document.body.classList.contains('qa-inspector')) {
+            runConsoleAudit();
+        }
+
+        if (_hasInitialLanguagePaint) {
+            window.setTimeout(() => document.body.classList.remove('is-translating'), 160);
+        }
+        _hasInitialLanguagePaint = true;
+    };
+
+    const copyEmail = () => {
+        const email = 'agustinaburellitj@gmail.com';
+        const copyToClipboard = () => {
+            if (navigator.clipboard?.writeText) {
+                return navigator.clipboard.writeText(email);
+            }
+
+            const tempInput = document.createElement('textarea');
+            tempInput.value = email;
+            tempInput.setAttribute('readonly', '');
+            tempInput.style.position = 'fixed';
+            tempInput.style.opacity = '0';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            const copied = document.execCommand('copy');
+            tempInput.remove();
+
+            return Promise.resolve();
+        };
+
+        copyToClipboard().then(() => {
+            const lang = localStorage.getItem('resumeLanguage') || 'en';
+            const message = translations[lang]?.copiedEmail || translations.en.copiedEmail;
+            const pill = document.getElementById('email-pill');
+            pill.textContent = message;
+            pill.style.color = '#2563eb';
+            setTimeout(() => {
+                pill.textContent = email;
+                pill.style.color = '';
+            }, 2000);
+        }).catch(() => {
+            const pill = document.getElementById('email-pill');
+            pill.textContent = 'Copy failed';
+        });
+    };
+
+    let _qaAuditRun = 0;
+
+    const triggerScanner = () => {
+        const scanner = document.querySelector('.qa-scanner');
+        if (!scanner) return;
+        scanner.style.animation = 'none';
+        scanner.offsetHeight;
+        scanner.style.animation = 'scanScreen 1.7s cubic-bezier(0.4, 0, 0.2, 1) forwards';
+    };
+
+    const runConsoleAudit = () => {
+        const ul = document.querySelector('.qa-log');
+        if (!ul) return;
+        ul.innerHTML = '';
+        const auditRun = ++_qaAuditRun;
+        const lang = localStorage.getItem('resumeLanguage') || 'en';
+        const t = translations[lang] || translations.en;
+        const steps = [
+            t.qaLogStart,
+            t.qaLogContrast,
+            t.qaLogAssets,
+            t.qaLogLayout,
+            t.qaLogChecklist,
+            t.qaLogDone
+        ];
+        steps.forEach((text, i) => {
+            setTimeout(() => {
+                if (auditRun !== _qaAuditRun) return;
+                const li = document.createElement('li');
+                li.textContent = text;
+                if (text.includes('Contrast') || text.includes('Auditoría')) li.style.color = '#1d4ed8';
+                if (text.includes('Assets') || text.includes('Control')) li.style.color = '#475569';
+                if (text.includes('Bilingual') || text.includes('bilingüe')) li.style.color = '#047857';
+                ul.appendChild(li);
+            }, i * 500);
+        });
+    };
+
+    const toggleQaMode = () => {
+        const body = document.body;
+        const button = document.getElementById('qa-toggle');
+        const report = document.getElementById('qa-report');
+        const isActive = body.classList.toggle('qa-inspector');
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+        report?.setAttribute('aria-hidden', String(!isActive));
+
+        const lang = localStorage.getItem('resumeLanguage') || 'en';
+        const t = translations[lang] || translations.en;
+        try {
+            button.textContent = isActive ? (t.qaButtonActive || 'Hide QA Checklist') : (t.qaButton || 'Show QA Checklist');
+        } catch (e) {
+            /* ignore */
+        }
+
+        if (isActive) {
+            const consoleEl = document.querySelector('.qa-console');
+            consoleEl?.classList.add('visible');
+            consoleEl?.setAttribute('aria-hidden', 'false');
+            runConsoleAudit();
+            triggerScanner();
+        } else {
+            _qaAuditRun++;
+            const ul = document.querySelector('.qa-log');
+            if (ul) ul.innerHTML = '';
+            const consoleEl = document.querySelector('.qa-console');
+            consoleEl?.classList.remove('visible');
+            consoleEl?.setAttribute('aria-hidden', 'true');
+        }
+    };
+
+    document.getElementById('language-select').addEventListener('change', (event) => {
+        setLanguage(event.target.value);
+    });
+
+    document.getElementById('qa-toggle').addEventListener('click', toggleQaMode);
+    document.getElementById('print-btn').addEventListener('click', () => window.print());
+    document.getElementById('email-pill').addEventListener('click', copyEmail);
+
+    setLanguage(localStorage.getItem('resumeLanguage') || 'en');
+</script>
+
+</body>
+</html>
