@@ -1,29 +1,19 @@
-# Agustina Burelli · Portfolio profesional
+# Agustina Burelli — Portfolio profesional
 
-CV web bilingüe (español e inglés) orientado a búsquedas de **QA Trainee** y primeras oportunidades en IT. Conserva el diseño rosado, la estructura de dos columnas, la fotografía, los controles y la experiencia interactiva de checklist QA del portfolio original.
-
-El [proyecto académico grupal de backend](https://github.com/jmeza03/tp_back) figura **en desarrollo**. El enlace muestra el avance del equipo: no atribuye a Agustina módulos específicos ni indica que el sistema esté terminado.
+CV web bilingüe orientado a búsquedas de **QA Trainee**. Presenta mis estudios de Ingeniería en Informática en la Universidad de Buenos Aires (UBA), formación en testing y conocimientos técnicos básicos.
 
 ## Contenido
 
-- Experiencia real en soporte digital y administrativo en Wussler Construcciones (2022–2024), resumida.
 - Formación Testing Master de Fundación Empujar IT (2025).
-- Python, SQL/MySQL, Git/GitHub, HTML/CSS y JavaScript, todos indicados como conocimientos básicos.
-- Fotografía existente en WebP con PNG de respaldo.
-- Selector de idioma, enlaces de contacto, botón de imprimir o guardar en PDF y botones de checklist QA originales.
+- Python, SQL/MySQL, Git, GitHub, HTML, CSS y JavaScript: nivel básico.
+- Experiencia laboral en Wussler Construcciones (2022–2024), con las tareas de producción visual resumidas.
+- Proyecto grupal de backend en desarrollo: [Sistema de Reservas de Canchas](https://github.com/jmeza03/tp_back). El enlace muestra el avance del equipo y no presenta el trabajo como terminado.
+- Portfolio original con fotografía, selector de idioma, enlaces de contacto, herramientas de QA y opción de imprimir o guardar en PDF.
 
-La página no requiere instalación ni compilación. Para verla localmente, abrí `index.html` en un navegador. El contenido y los metadatos cambian con el idioma elegido; el español es el idioma inicial.
+## English
 
-## Revisión y publicación
+Bilingual web resume for **QA Trainee** applications. It presents Informatics Engineering studies at the University of Buenos Aires (UBA), testing training, and basic knowledge of Python, SQL/MySQL, Git, GitHub, HTML, CSS, and JavaScript.
 
-Los cambios deben revisarse en una rama y fusionarse a `main` solo con aprobación de Agustina. GitHub Pages usa la versión publicada desde la rama configurada en el repositorio. Después de la fusión, comprobar la [web pública](https://agustinaburellitj-code.github.io/Agustina-Burelli-CV/): contenido en ambos idiomas, fotografía, enlaces, ancho de celular y la vista de impresión/PDF. La comprobación de la web pública queda pendiente hasta que se actualice `main`.
+The group backend project, [Court Reservation System](https://github.com/jmeza03/tp_back), is in progress. The repository shows the team's work and is not presented as complete. The original portfolio photo, layout, language selector, QA tools, links, and print/save-to-PDF option are retained.
 
----
-
-# English
-
-Bilingual (Spanish/English) web resume focused on **QA Trainee** and entry-level IT roles. It presents Informatics Engineering studies at the University of Buenos Aires, testing training and basic technical skills.
-
-The linked [group academic backend project](https://github.com/jmeza03/tp_back) is **in progress**. The repository shows team progress; this CV does not claim ownership of particular modules or describe the system as complete.
-
-The page preserves the original pink design, two-column structure, photo, controls, and interactive QA checklist. It includes a language selector, contact links and a print/save-to-PDF button. Open `index.html` locally to review it. After approval and merging into `main`, verify the published GitHub Pages site in both languages, on mobile and in print.
+After review and approval, merge the changes to main, then check the published GitHub Pages version on mobile and in print/PDF.
