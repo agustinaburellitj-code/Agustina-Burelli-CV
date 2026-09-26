@@ -1,43 +1,18 @@
-# Agustina Burelli — Digital Production & QA Resume
+# Agustina Burelli — Portfolio profesional
 
-Interactive resume built with HTML, CSS, and JavaScript.
+CV web bilingüe orientado a búsquedas de **QA Trainee**. Presenta mis estudios de Ingeniería en Informática en la Universidad de Buenos Aires (UBA), formación en testing y conocimientos de programación y herramientas web.
 
-## Focus
+## Conocimientos y experiencia
 
-- Digital production support
-- Visual QA
-- Asset review
-- Manual testing foundations
-- Ticket-based workflows
-- AI-assisted documentation with human review
+- Python, Flask, SQL, MySQL, Git y GitHub.
+- HTML, CSS, JavaScript y herramientas asistidas por IA.
+- Formación Testing Master de Fundación Empujar IT (2025).
+- Experiencia laboral en Wussler Construcciones (2022–2024), con las tareas de producción visual resumidas.
 
-## Features
+El portfolio conserva sus secciones, fotografía, selector de idioma, controles de QA, enlaces de contacto y opción de imprimir o guardar en PDF.
 
-- Bilingual EN/ES content
-- Responsive layout
-- Print-ready PDF view
-- Copy email interaction
-- QA checklist mode
-- Asset tooltip
-- Semantic HTML structure
-- Social preview metadata
-- JSON-LD Person schema
-- Optimized WebP profile image with PNG fallback
-- GitHub Pages-ready deployment
+## English
 
-## QA Mindset Demonstrated
+Bilingual web resume for **QA Trainee** applications. It presents Informatics Engineering studies at the University of Buenos Aires (UBA), testing training, and experience with Python, Flask, SQL, MySQL, Git, GitHub, HTML, CSS, JavaScript and AI-assisted tools.
 
-- Content clarity
-- Asset review
-- Layout consistency
-- File naming and version tracking
-- Workflow handoff
-- Human review for AI-assisted work
-
-## Deployment Notes
-
-When published, add discreet links for:
-
-- Live CV
-- GitHub repo
-- Download PDF
+It retains the original sections, photo, language selector, QA controls, contact links, and print/save-to-PDF option.
