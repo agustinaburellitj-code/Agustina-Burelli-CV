@@ -1,18 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Agustina Burelli, estudiante de Ingeniería en Informática en la UBA y QA Trainee. Formación en testing manual y conocimientos básicos de Python, SQL/MySQL y desarrollo web.">
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="Agustina Burelli | Estudiante de Ingeniería en Informática | QA Trainee">
-  <meta property="og:description" content="Portfolio profesional de Agustina Burelli: formación en testing, conocimientos técnicos básicos y proyecto académico de backend en desarrollo.">
-  <meta property="og:url" content="https://agustinaburellitj-code.github.io/Agustina-Burelli-CV/">
-  <meta property="og:locale" content="es_AR">
-  <meta property="og:image" content="https://agustinaburellitj-code.github.io/Agustina-Burelli-CV/profile.png">
-  <meta name="theme-color" content="#173c66">
-  <title>Agustina Burelli | Estudiante de Ingeniería en Informática | QA Trainee</title>
-  <script id="person-schema" type="application/ld+json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agustina Burelli, estudiante de Ingeniería en Informática en la UBA y QA Trainee. Formación en testing manual y conocimientos básicos de Python, SQL/MySQL, Git y tecnologías web.">
+    <meta property="og:title" content="Agustina Burelli — Estudiante de Ingeniería en Informática | QA Trainee">
+    <meta property="og:description" content="Portfolio profesional de Agustina Burelli: formación en testing, conocimientos técnicos básicos y un proyecto académico de backend en desarrollo.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:image" content="https://agustinaburellitj-code.github.io/Agustina-Burelli-CV/profile.png">
+    <title>Agustina Burelli — Estudiante de Ingeniería en Informática | QA Trainee</title>
+
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -24,318 +23,2309 @@
         "https://github.com/agustinaburellitj-code",
         "https://www.linkedin.com/in/agustina-burelli/"
       ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressRegion": "Zona Oeste",
+        "addressCountry": "AR"
+      },
+      "knowsAbout": [
+        "Manual testing",
+        "Python (basic)",
+        "SQL and MySQL (basic)",
+        "Git and GitHub (basic)",
+        "HTML, CSS and JavaScript (basic)"
+      ],
       "affiliation": {
         "@type": "CollegeOrUniversity",
         "name": "Universidad de Buenos Aires"
-      },
-      "knowsAbout": ["Testing manual", "Python básico", "SQL y MySQL básico", "Git y GitHub básico", "HTML y CSS básico", "JavaScript básico"]
+      }
     }
-  </script>
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #172333;
-      --muted: #4a5a6d;
-      --blue: #173c66;
-      --line: #dce5ef;
-      --pale: #f3f7fb;
-      --paper: #fff;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      padding: 32px 16px;
-      background: #eaf0f6;
-      color: var(--ink);
-      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
-    }
-    a { color: var(--blue); text-underline-offset: 3px; }
-    a:hover { color: #235e9d; }
-    a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid #6ca9ef; outline-offset: 3px; }
-    .page {
-      width: min(100%, 960px);
-      margin: auto;
-      background: var(--paper);
-      border-radius: 16px;
-      box-shadow: 0 15px 45px rgba(23, 60, 102, .11);
-      overflow: hidden;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: start;
-      gap: 32px;
-      padding: 42px 48px 32px;
-      border-bottom: 1px solid var(--line);
-    }
-    h1 { margin: 0; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.15; letter-spacing: -.035em; }
-    .role { margin: 10px 0 14px; color: var(--blue); font-size: 1.13rem; font-weight: 700; }
-    .intro { max-width: 65ch; margin: 0; color: var(--muted); }
-    .photo {
-      display: block;
-      width: 124px;
-      height: 124px;
-      object-fit: cover;
-      border: 4px solid var(--pale);
-      border-radius: 16px;
-    }
-    .toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 12px 48px;
-      border-bottom: 1px solid var(--line);
-      background: var(--pale);
-    }
-    .toolbar label { font-size: .87rem; font-weight: 600; }
-    .toolbar select, .toolbar button {
-      border: 1px solid #abbdd0;
-      border-radius: 8px;
-      padding: 7px 11px;
-      background: #fff;
-      color: var(--ink);
-      font: inherit;
-      cursor: pointer;
-    }
-    .toolbar button { background: var(--blue); color: #fff; border-color: var(--blue); }
-    .contacts { display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 20px 48px; border-bottom: 1px solid var(--line); font-size: .9rem; }
-    .contacts a { overflow-wrap: anywhere; }
-    .body-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(250px, 1fr); }
-    main { min-width: 0; padding: 26px 48px 40px; }
-    aside { min-width: 0; padding: 26px 36px 40px; background: var(--pale); border-left: 1px solid var(--line); }
-    section + section { margin-top: 30px; }
-    h2 { margin: 0 0 12px; color: var(--blue); font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; }
-    h3 { margin: 0; font-size: 1.02rem; line-height: 1.35; }
-    p { margin: 6px 0 0; }
-    .subtle { color: var(--muted); font-size: .92rem; }
-    ul { margin: 9px 0 0; padding-left: 19px; }
-    li + li { margin-top: 7px; }
-    .tags { list-style: none; padding: 0; margin: 0; }
-    .tags li { margin: 0 0 9px; padding: 8px 11px; background: #fff; border: 1px solid var(--line); border-radius: 8px; line-height: 1.35; }
-    .tags strong { display: block; font-size: .92rem; }
-    .tags span { display: block; color: var(--muted); font-size: .82rem; }
-    .project-link { display: inline-block; margin-top: 10px; font-weight: 600; overflow-wrap: anywhere; }
-    footer { padding: 16px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
-    @media (max-width: 750px) {
-      body { padding: 0; background: #fff; }
-      .page { border-radius: 0; box-shadow: none; }
-      .hero { padding: 28px 22px; gap: 18px; }
-      .photo { width: 96px; height: 96px; }
-      .toolbar, .contacts { padding-left: 22px; padding-right: 22px; }
-      .body-grid { display: block; }
-      main, aside { padding: 26px 22px; }
-      aside { border-left: 0; border-top: 1px solid var(--line); }
-      footer { padding: 16px 22px; }
-    }
-    @media (max-width: 420px) {
-      .hero { grid-template-columns: minmax(0, 1fr) 74px; gap: 12px; }
-      .photo { width: 74px; height: 74px; }
-      .role { font-size: 1rem; }
-      .toolbar { justify-content: flex-start; }
-    }
-    @page { size: A4; margin: 12mm; }
-    @media print {
-      body { padding: 0; background: #fff; font-size: 9.5pt; line-height: 1.4; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .page { width: 100%; box-shadow: none; border-radius: 0; }
-      .hero { padding: 0 0 12px; gap: 16px; }
-      h1 { font-size: 22pt; }
-      .role { margin: 4px 0 7px; }
-      .photo { width: 78px; height: 78px; }
-      .toolbar { display: none; }
-      .contacts { padding: 10px 0; font-size: 8pt; gap: 3px 12px; }
-      .body-grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(180px, 1fr); }
-      main { padding: 16px 18px 0 0; }
-      aside { padding: 16px 0 0 16px; background: #fff; }
-      section + section { margin-top: 18px; }
-      h2 { margin-bottom: 7px; }
-      ul { margin-top: 5px; }
-      li + li { margin-top: 3px; }
-      .tags li { padding: 2px 0; border: 0; margin-bottom: 5px; }
-      .tags span { display: inline; }
-      .tags strong { display: inline; }
-      .tags strong::after { content: " — "; }
-      footer { padding: 12px 0 0; }
-      section, li, .tags li { break-inside: avoid; }
-      a { color: var(--ink); }
-    }
-  </style>
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CLEAN UI TOKENS --- */
+        :root {
+            --bg-body: #f9fafb;
+            --bg-card: #ffffff;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --border-soft: #e5e7eb;
+            --font-ui: 'Plus Jakarta Sans', sans-serif;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+            /* QA audit sweep and activity panel */
+            .qa-scanner {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.52), transparent);
+                z-index: 1200;
+                pointer-events: none;
+                transform: translateY(-120%);
+                display: none;
+                opacity: 0.72;
+            }
+
+            .qa-inspector .qa-scanner { display: block; }
+
+            @keyframes scanScreen {
+                0% { transform: translateY(-120%); }
+                100% { transform: translateY(120%); }
+            }
+
+            .qa-console {
+                position: fixed;
+                right: 1rem;
+                bottom: 1rem;
+                width: 320px;
+                max-width: 40vw;
+                background: rgba(255, 255, 255, 0.97);
+                color: #334155;
+                padding: 0.6rem 0.7rem;
+                border-radius: 10px;
+                z-index: 1150;
+                border: 1px solid rgba(148, 163, 184, 0.28);
+                box-shadow: 0 10px 26px rgba(15, 23, 42, 0.16);
+                display: none;
+                font-size: 0.82rem;
+            }
+
+            .qa-console.visible { display: block; }
+            .qa-console-header { font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main); font-size: 0.92rem; }
+            .qa-log { list-style: none; margin: 0; padding: 0; max-height: 220px; overflow: auto; display:flex; flex-direction:column; gap: 0.2rem; }
+            .qa-log li { opacity: 0; transform: translateY(6px); animation: qaLogIn 300ms forwards; }
+            @keyframes qaLogIn { to { opacity: 1; transform: none; } }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-ui);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding: 2rem 1rem;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent); }
+
+        button, select {
+            font: inherit;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            min-width: 0;
+            transition: opacity 0.16s ease, transform 0.16s ease;
+        }
+
+        body.is-translating .cv-container {
+            opacity: 0.82;
+            transform: translateY(1px);
+        }
+
+        .header {
+            padding: 2.5rem 3rem;
+            border-bottom: 1px solid var(--border-soft);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .header-info {
+            flex: 1;
+            min-width: 300px;
+            max-width: 100%;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+        }
+
+        .role-subtitle {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.45;
+        }
+
+        .ai-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 620px;
+        }
+
+        .header-controls {
+            display: grid;
+            gap: 0.75rem;
+            align-items: start;
+            width: min(100%, 260px);
+        }
+
+        .header-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-end;
+            min-width: 240px;
+            width: min(100%, 280px);
+            max-width: 100%;
+        }
+
+        .profile-photo-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-photo-wrapper picture {
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .profile-card {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            width: 100%;
+            min-width: 0;
+            padding: 1rem;
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+        }
+
+        .profile-photo {
+            width: 104px;
+            height: 104px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 1px solid rgba(37, 99, 235, 0.16);
+            box-shadow: 0 10px 22px rgba(37, 99, 235, 0.08);
+            flex-shrink: 0;
+        }
+
+        .profile-card:hover {
+            border-color: rgba(37, 99, 235, 0.24);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+            transform: translateY(-1px);
+        }
+
+        /* --- NATIVE SOBER QA TOOLTIP --- */
+        .asset-tooltip {
+            display: none;
+            position: absolute;
+            background: rgba(17, 24, 39, 0.98);
+            border: 1px solid #374151;
+            color: #f3f4f6;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            width: 180px;
+            bottom: -5px;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            z-index: 100;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+            text-align: left;
+            font-weight: 400;
+            white-space: pre-line;
+        }
+
+        .qa-inspector .profile-photo-wrapper:hover .asset-tooltip {
+            display: block;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            min-width: 0;
+        }
+
+        .name,
+        .role,
+        .role-subtitle,
+        .ai-note,
+        .section-title,
+        .item-title,
+        .item-subtitle,
+        .cert-title,
+        .cert-meta {
+            overflow-wrap: anywhere;
+        }
+
+        .profile-tagline {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            overflow-wrap: anywhere;
+        }
+
+        .profile-subtitle {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        .control-help {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-top: 0.15rem;
+            overflow-wrap: anywhere;
+        }
+
+        .qa-report {
+            display: none;
+            padding: 1rem 3rem 0;
+        }
+
+        .qa-inspector .qa-report {
+            display: block;
+        }
+
+        .qa-report-card {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-soft);
+            background: rgba(236, 248, 255, 0.95);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .qa-report-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .qa-report-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        .qa-status {
+            font-size: 0.85rem;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .qa-report-text {
+            margin: 0 0 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* --- STATIC METRICS PANEL --- */
+        .qa-metrics-static {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            margin-bottom: 1.25rem;
+        }
+        .qa-metrics-static .metric { 
+            display: block; 
+            padding: 0.3rem 0.6rem; 
+            border-radius: 6px; 
+            font-size: 0.82rem;
+        }
+        .qa-metrics-static .metric span:first-child { font-weight: 700; margin-right: 0.4rem; }
+        .qa-metrics-static .metric.layout { background: rgba(37, 99, 235, 0.08); color: #1d4ed8; }
+        .qa-metrics-static .metric.brand { background: rgba(100, 116, 139, 0.1); color: #475569; }
+        .qa-metrics-static .metric.print { background: rgba(16, 185, 129, 0.1); color: #047857; }
+
+        /* --- GROUPED CHECKLIST --- */
+        .qa-checklist-group {
+            margin-bottom: 1rem;
+        }
+        .qa-checklist-group:last-child {
+            margin-bottom: 0;
+        }
+        .qa-group-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0 0 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .qa-report-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.4rem;
+        }
+
+        .qa-report-list li {
+            padding-left: 1.4rem;
+            position: relative;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .qa-report-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-size: 0.85rem;
+            top: 0.08rem;
+        }
+
+        .qa-inspector .cv-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+            background-size: 36px 36px;
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .qa-inspector [data-qa-label] {
+            position: relative;
+        }
+
+        .qa-inspector [data-qa-label]::after {
+            content: attr(data-qa-label);
+            position: absolute;
+            top: 0.7rem;
+            right: 0.7rem;
+            font-size: 0.68rem;
+            color: #2563eb;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(37, 99, 235, 0.24);
+            border-radius: 999px;
+            padding: 0.18rem 0.5rem;
+            z-index: 2;
+        }
+
+        .qa-inspector .profile-card,
+        .qa-inspector .skill-tag,
+        .qa-inspector .item,
+        .qa-inspector .contact-pills {
+            outline: 1px dashed rgba(37, 99, 235, 0.24);
+            outline-offset: 14px;
+        }
+
+        .qa-inspector .qa-report-card {
+            border-left: 3px solid #2563eb;
+        }
+
+        .control-button[aria-pressed="true"] {
+            background-color: rgba(37, 99, 235, 0.12);
+            border-color: rgba(37, 99, 235, 0.28);
+            color: #1e40af;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .control-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .control-input,
+        .control-button {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-soft);
+            background: #fff;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: border-color 0.16s ease, background-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+            text-align: left;
+        }
+
+        .control-input:focus-visible,
+        .control-button:focus-visible,
+        .pill:focus-visible {
+            outline: 2px solid rgba(37, 99, 235, 0.25);
+            outline-offset: 2px;
+        }
+
+        .control-button:hover,
+        .control-input:hover {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+            box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .control-button:active,
+        .control-input:active,
+        .pill:active {
+            transform: translateY(0);
+        }
+
+        .contact-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            max-width: 100%;
+            padding: 0.45rem 0.9rem;
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-soft);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: border-color 0.16s ease, background-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+            overflow-wrap: anywhere;
+        }
+
+        .pill:hover {
+            background-color: var(--accent-light);
+            border-color: #bfdbfe;
+            color: var(--accent);
+            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .copy-btn {
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        .body-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .main-col {
+            padding: 3rem;
+            border-right: 1px solid var(--border-soft);
+            min-width: 0;
+        }
+
+        .side-col {
+            padding: 3rem;
+            background-color: #fafaf9;
+            min-width: 0;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-label {
+            display: none;
+            position: absolute;
+            top: -1.2rem;
+            left: 0;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #4f46e5;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .qa-inspector .section-label {
+            display: inline-block;
+        }
+
+        .qa-inspector .section {
+            outline: 1px solid rgba(99, 102, 241, 0.16);
+            outline-offset: 10px;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-soft);
+        }
+
+        .paragraph {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        .portfolio-note {
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .portfolio-note .section-title {
+            margin-bottom: 0.75rem;
+        }
+
+        .item {
+            margin-bottom: 2rem;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.4rem;
+            flex-wrap: wrap;
+            min-width: 0;
+        }
+
+        .item-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            background: var(--bg-body);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .item-subtitle {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1.3rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            overflow-wrap: anywhere;
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            top: 0;
+        }
+
+        .focus-list {
+            display: grid;
+            gap: 0.55rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .focus-list li {
+            position: relative;
+            padding-left: 1.15rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.45;
+            overflow-wrap: anywhere;
+        }
+
+        .focus-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 0.42rem;
+            height: 0.42rem;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.72);
+        }
+
+        .project-link {
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: underline;
+            text-decoration-color: rgba(37, 99, 235, 0.28);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.14em;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+            text-decoration-color: rgba(37, 99, 235, 0.52);
+        }
+
+        .portfolio-project-list li {
+            margin-bottom: 0.65rem;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            min-width: 0;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            color: var(--text-main);
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .cert-item {
+            margin-bottom: 1rem;
+        }
+
+        .cert-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .cert-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .footer {
+            display: none; /* Oculto por CSS en entorno web */
+        }
+
+        .print-online-url {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .header {
+                padding: 1.8rem 2rem;
+            }
+
+            .body-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-col,
+            .side-col {
+                padding: 2rem;
+            }
+
+            .main-col {
+                border-right: none;
+                border-bottom: 1px solid var(--border-soft);
+            }
+
+            .qa-report {
+                padding: 1rem 2rem 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .cv-container,
+            .header,
+            .body-grid,
+            .main-col,
+            .side-col,
+            .section,
+            .item,
+            .qa-report,
+            .qa-report-card {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+            }
+
+            .header {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                padding: 1.25rem 1.25rem 1rem;
+            }
+
+            .header-info,
+            .header-side {
+                min-width: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .header-controls,
+            .profile-photo-wrapper {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .profile-card {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                align-items: flex-start;
+                justify-items: start;
+                gap: 0.75rem;
+                width: 100%;
+            }
+
+            .profile-photo {
+                width: 84px;
+                height: 84px;
+            }
+
+            .profile-details {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .contact-pills {
+                width: 100%;
+            }
+
+            .control-button,
+            .control-input {
+                padding: 0.75rem 0.9rem;
+                max-width: 100%;
+                white-space: normal;
+            }
+
+            .name {
+                font-size: 1.9rem;
+            }
+
+            .role {
+                font-size: 0.95rem;
+            }
+
+            .role,
+            .role-subtitle,
+            .ai-note,
+            .control-button,
+            .control-input {
+                overflow-wrap: anywhere;
+            }
+
+            .qa-missions {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 420px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            .cv-container {
+                border-radius: 12px;
+            }
+
+            .header {
+                padding: 1rem;
+            }
+
+            .main-col,
+            .side-col {
+                padding: 1.25rem;
+            }
+
+            .contact-pills {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+
+            .pill {
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+            }
+
+            .profile-card {
+                gap: 0.8rem;
+            }
+
+            .profile-photo {
+                width: 78px;
+                height: 78px;
+            }
+
+            .profile-tagline {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 9mm;
+            }
+
+            :root {
+                --print-text: #111827;
+                --print-muted: #6b7280;
+                --print-rose: #be5c7a;
+                --print-rose-soft: #fdf2f6;
+                --print-rose-border: #f3c6d3;
+                --print-rose-light: #f9dbe5;
+                --print-sidebar: #fff7fa;
+                --print-border: #e5e7eb;
+            }
+
+            *,
+            *::before,
+            *::after {
+                box-shadow: none;
+                text-shadow: none;
+            }
+
+            html,
+            body {
+                width: 100%;
+                min-width: 0;
+                min-height: auto;
+                overflow: visible;
+                background: #fff;
+                color: var(--print-text);
+            }
+
+            body {
+                display: block;
+                padding: 0;
+                margin: 0;
+                font-family: var(--font-ui);
+                font-size: 9.15px;
+                line-height: 1.38;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .cv-container {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-width: none;
+                min-width: 0;
+                min-height: 268mm;
+                margin: 0;
+                padding: 0;
+                overflow: visible;
+                background: #fff;
+                border: 0;
+                border-radius: 0;
+            }
+
+            main {
+                display: flex;
+                flex: 1 1 auto;
+                min-height: 0;
+            }
+
+            .header-controls,
+            .qa-console,
+            .qa-scanner,
+            .qa-report,
+            .qa-report-card,
+            .control-button,
+            .control-input,
+            .control-help,
+            .control-label,
+            .asset-tooltip,
+            .section-label,
+            .portfolio-note,
+            .qa-inspector .cv-container::before,
+            .qa-inspector [data-qa-label]::after {
+                display: none !important;
+                content: none !important;
+            }
+
+            .header {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) 145px;
+                gap: 12px;
+                align-items: center;
+                width: 100%;
+                margin: 0 0 12px;
+                padding: 10px 11px 11px;
+                border: 1px solid var(--print-rose-border);
+                border-left: 5px solid var(--print-rose);
+                border-radius: 10px;
+                background:
+                    linear-gradient(90deg, var(--print-rose-soft), #fff 56%),
+                    #fff;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .header-info,
+            .header-side {
+                min-width: 0;
+                max-width: 100%;
+            }
+
+            .header-side {
+                display: flex;
+                width: 145px;
+                align-items: flex-end;
+                justify-content: flex-start;
+            }
+
+            .profile-photo-wrapper {
+                width: 100%;
+            }
+
+            .profile-card {
+                display: grid;
+                grid-template-columns: 52px minmax(0, 1fr);
+                gap: 7px;
+                align-items: center;
+                width: 100%;
+                padding: 0;
+                background: transparent;
+                border: 0;
+                border-radius: 0;
+            }
+
+            .profile-photo {
+                width: 52px;
+                height: 52px;
+                border-radius: 10px;
+                border: 1px solid var(--print-rose-border);
+                object-fit: cover;
+            }
+
+            .profile-details {
+                gap: 1px;
+                min-width: 0;
+            }
+
+            .profile-tagline {
+                font-size: 8px;
+                line-height: 1.22;
+                font-weight: 700;
+                color: var(--print-text);
+            }
+
+            .profile-subtitle {
+                font-size: 7.15px;
+                line-height: 1.25;
+                color: var(--print-muted);
+            }
+
+            .name {
+                margin: 0 0 2px;
+                font-size: 23.5px;
+                line-height: 1.02;
+                font-weight: 700;
+                letter-spacing: 0;
+                color: var(--print-text);
+            }
+
+            .role {
+                margin: 0 0 2px;
+                font-size: 10.7px;
+                line-height: 1.25;
+                font-weight: 700;
+                color: var(--print-rose);
+            }
+
+            .role-subtitle {
+                margin: 0 0 4px;
+                font-size: 8.65px;
+                line-height: 1.28;
+                font-weight: 600;
+                color: var(--print-muted);
+            }
+
+            .ai-note {
+                max-width: 560px;
+                margin: 0 0 6px;
+                font-size: 8.05px;
+                line-height: 1.34;
+                color: var(--print-muted);
+            }
+
+            .contact-pills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 3px;
+                width: 100%;
+            }
+
+            .pill {
+                display: inline-flex;
+                align-items: center;
+                max-width: 100%;
+                padding: 2.4px 6px;
+                border: 1px solid var(--print-border);
+                border-radius: 999px;
+                background: #fff;
+                color: #374151;
+                font-size: 7.7px;
+                line-height: 1.18;
+                font-weight: 600;
+                white-space: normal;
+                overflow-wrap: anywhere;
+            }
+
+            .print-online-link {
+                border-color: var(--print-rose-border);
+                background: #fff;
+                color: var(--print-rose);
+            }
+
+            .print-online-url {
+                display: inline;
+                color: var(--print-muted);
+                font-weight: 500;
+            }
+
+            .header .print-online-url {
+                display: none;
+            }
+
+            .body-grid {
+                display: grid;
+                grid-template-columns: minmax(0, 1.48fr) minmax(0, 0.92fr);
+                gap: 12px;
+                align-items: stretch;
+                width: 100%;
+                min-width: 0;
+                flex: 1 1 auto;
+            }
+
+            .main-col,
+            .side-col {
+                min-width: 0;
+                padding: 0;
+                border: 0;
+                background: transparent;
+            }
+
+            .main-col {
+                display: grid;
+                align-content: start;
+                gap: 18px;
+                padding-right: 1px;
+            }
+
+            .side-col {
+                display: grid;
+                align-content: start;
+                gap: 15px;
+                padding: 11px 10px 11px 12px;
+                border: 1px solid var(--print-rose-border);
+                border-left: 3px solid var(--print-rose-light);
+                border-radius: 10px;
+                background: var(--print-sidebar);
+            }
+
+            .section {
+                margin: 0;
+                padding: 0;
+                page-break-inside: auto;
+                break-inside: auto;
+            }
+
+            .section-title {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                margin: 0 0 5.5px;
+                font-size: 8px;
+                line-height: 1.2;
+                font-weight: 800;
+                letter-spacing: 0.07em;
+                text-transform: uppercase;
+                color: var(--print-rose);
+            }
+
+            .section-title::after {
+                content: "";
+                display: block;
+                flex: 1;
+                height: 1px;
+                background: linear-gradient(90deg, var(--print-rose-border), rgba(229, 231, 235, 0));
+            }
+
+            .side-col .section-title {
+                margin-bottom: 4.8px;
+                font-size: 7.5px;
+                color: #8f4660;
+            }
+
+            .paragraph {
+                margin: 0;
+                font-size: 9.25px;
+                line-height: 1.48;
+                color: #374151;
+            }
+
+            .bullet-list,
+            .focus-list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .focus-list {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                column-gap: 10px;
+                row-gap: 5px;
+            }
+
+            .bullet-list li,
+            .focus-list li {
+                position: relative;
+                margin: 0 0 4px;
+                padding-left: 9px;
+                font-size: 8.55px;
+                line-height: 1.42;
+                color: #374151;
+                overflow-wrap: anywhere;
+            }
+
+            .bullet-list li::before,
+            .focus-list li::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 5.2px;
+                width: 3px;
+                height: 3px;
+                border-radius: 999px;
+                background: var(--print-rose);
+            }
+
+            .portfolio-project-list {
+                display: grid;
+                gap: 5px;
+            }
+
+            .portfolio-project-list li {
+                margin: 0;
+                padding: 5px 6px 5px 9px;
+                border: 1px solid var(--print-rose-border);
+                border-left: 3px solid var(--print-rose);
+                border-radius: 6px;
+                background: var(--print-rose-soft);
+            }
+
+            .portfolio-project-list li::before {
+                display: none;
+            }
+
+            .project-link {
+                color: #9f4560;
+                font-weight: 800;
+                text-decoration: none;
+            }
+
+            .item {
+                margin: 0;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .item-header {
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+                gap: 6px;
+                margin: 0 0 1px;
+                min-width: 0;
+            }
+
+            .item-title {
+                margin: 0;
+                font-size: 9.55px;
+                line-height: 1.22;
+                font-weight: 800;
+                color: var(--print-text);
+            }
+
+            .item-date {
+                flex: 0 0 auto;
+                padding: 0;
+                border: 0;
+                background: transparent;
+                color: var(--print-muted);
+                font-size: 7.55px;
+                line-height: 1.2;
+                font-weight: 700;
+            }
+
+            .item-subtitle {
+                margin: 0 0 3px;
+                font-size: 8.2px;
+                line-height: 1.25;
+                color: var(--print-muted);
+                font-weight: 600;
+            }
+
+            .tags-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 3.4px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .skill-tag {
+                display: inline-flex;
+                align-items: center;
+                max-width: 100%;
+                padding: 2.5px 4.8px;
+                border: 1px solid #ead6de;
+                border-radius: 6px;
+                background: #fff;
+                color: #2f3744;
+                font-size: 7.35px;
+                line-height: 1.18;
+                font-weight: 650;
+                white-space: normal;
+                overflow-wrap: anywhere;
+            }
+
+            .side-col .skill-tag:nth-child(3n + 1) {
+                border-color: var(--print-rose-border);
+                background: #fffcff;
+            }
+
+            .cert-item {
+                margin: 0 0 5px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #f1dce4;
+            }
+
+            .cert-item:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: 0;
+            }
+
+            .cert-title {
+                display: block;
+                font-size: 8.25px;
+                line-height: 1.25;
+                font-weight: 800;
+                color: var(--print-text);
+            }
+
+            .cert-meta {
+                display: block;
+                margin-top: 0.5px;
+                font-size: 7.45px;
+                line-height: 1.25;
+                color: var(--print-muted);
+            }
+
+            .footer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                width: 100%;
+                margin: auto 0 0;
+                padding: 6px 0 0;
+                border-top: 1px solid var(--print-rose-border);
+                text-align: left;
+                font-size: 7.4px;
+                line-height: 1.25;
+                color: var(--print-muted);
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .footer-online-link {
+                display: inline-flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                gap: 3px;
+                min-width: 0;
+                max-width: 62%;
+                text-align: right;
+                color: var(--print-rose);
+                font-weight: 800;
+                overflow-wrap: anywhere;
+            }
+
+            .footer-online-link .print-online-url {
+                word-break: break-all;
+            }
+
+            .qa-inspector .section,
+            .qa-inspector .profile-card,
+            .qa-inspector .skill-tag,
+            .qa-inspector .item,
+            .qa-inspector .contact-pills {
+                outline: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <div>
-        <h1>Agustina Burelli</h1>
-        <p class="role" data-i18n="role">Estudiante de Ingeniería en Informática | QA Trainee</p>
-        <p class="intro" data-i18n="intro">Estudio Ingeniería en Informática en la UBA y me formé en fundamentos de testing manual. Estoy desarrollando conocimientos básicos de programación, bases de datos y herramientas web. Busco mi primera oportunidad profesional en IT, especialmente en QA.</p>
-      </div>
-      <picture>
-        <source srcset="profile.webp" type="image/webp">
-        <img class="photo" src="profile.png" width="124" height="124" alt="Fotografía de Agustina Burelli" data-alt="photoAlt" decoding="async">
-      </picture>
+
+<div class="cv-container">
+    
+    <header class="header" data-qa-label="visible">
+        <div class="header-info">
+            <span class="section-label" data-key="sectionHeaderLabel">ENCABEZADO</span>
+            <h1 class="name">Agustina Burelli</h1>
+            <h2 class="role" data-key="role">Estudiante de Ingeniería en Informática | QA Trainee</h2>
+            <p class="role-subtitle" data-key="roleSubtitle">Testing manual · Python · SQL/MySQL · Git/GitHub · HTML · CSS · JavaScript (Básico)</p>
+            <p class="ai-note" data-key="aiNote">Busco una primera oportunidad en QA o IT. Mis conocimientos técnicos son básicos y están en formación.</p>
+            <div class="contact-pills" data-qa-label="visible">
+                <span class="pill" data-key="location">Buenos Aires, Zona Oeste</span>
+                <button class="pill copy-btn" id="email-pill" type="button" aria-label="Copy email address">agustinaburellitj@gmail.com</button>
+                <span class="pill" data-key="phone">+54 11 2596 7991</span>
+                <a class="pill" href="https://github.com/agustinaburellitj-code" target="_blank" rel="noopener noreferrer" data-key="githubLabel">GitHub</a>
+                <a class="pill" href="https://www.linkedin.com/in/agustina-burelli/" target="_blank" rel="noopener noreferrer" data-key="linkedinLabel">LinkedIn</a>
+                <a class="pill print-online-link" href="https://agustinaburellitj-code.github.io/Agustina-Burelli-CV/" target="_blank" rel="noopener noreferrer">
+                    <span data-key="portfolioLabel">CV online / Portfolio</span>
+                    <span class="print-online-url">agustinaburellitj-code.github.io/Agustina-Burelli-CV/</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="header-side">
+            <div class="profile-photo-wrapper">
+                <div class="profile-card" data-qa-label="visible">
+                    <picture>
+                        <source srcset="profile.webp" type="image/webp">
+                        <img src="profile.png" alt="Agustina Burelli profile photo" class="profile-photo" width="104" height="104" decoding="async" fetchpriority="high">
+                    </picture>
+                    <div class="profile-details">
+                        <p class="profile-tagline" data-key="profileTagline">Estudiante de Ingeniería en Informática | QA Trainee</p>
+                        <p class="profile-subtitle" data-key="profileSubtitle">Testing manual · Fundamentos de programación</p>
+                    </div>
+                </div>
+                <div class="asset-tooltip" data-key="photoTooltip">Foto de perfil
+Formato: WebP con respaldo PNG
+Texto alternativo: presente
+Se conserva la imagen del portfolio original</div>
+            </div>
+
+            <div class="header-controls">
+                <div class="control-group">
+                    <label for="language-select" class="control-label" data-key="languageLabel">Idioma</label>
+                    <select id="language-select" class="control-input" aria-label="Select language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+                <button class="control-button" id="qa-toggle" type="button" aria-pressed="false" data-key="qaButton">Ver checklist QA</button>
+                <p class="control-help" data-key="qaMicrocopy">Checklist opcional para revisar contenido, enlaces, traducciones, comportamiento responsive y salida de impresión.</p>
+                <button class="control-button" id="print-btn" type="button" data-key="printButton">Imprimir / PDF</button>
+            </div>
+        </div>
     </header>
-    <div class="toolbar">
-      <label for="language" data-i18n="language">Idioma</label>
-      <select id="language" aria-label="Idioma / Language">
-        <option value="es">Español</option>
-        <option value="en">English</option>
-      </select>
-      <button id="print" type="button" data-i18n="print">Imprimir / Guardar PDF</button>
+
+    <main>
+        <div class="qa-report" id="qa-report" aria-hidden="true">
+            <div class="qa-report-card">
+                <div class="qa-report-header">
+                    <h3 class="qa-report-title" data-key="qaReportTitle">Checklist QA del CV</h3>
+                    <span class="qa-status" data-key="qaStatusText">Herramientas interactivas de revisión</span>
+                </div>
+                
+                <div class="qa-metrics-static">
+                    <div class="metric layout"><span data-key="qaMetricContrastLabel">[Perfil]</span><span data-key="qaMetricContrastValue">Comprobá que el puesto buscado y los estudios se encuentren fácilmente.</span></div>
+                    <div class="metric brand"><span data-key="qaMetricAssetsLabel">[Enlaces]</span><span data-key="qaMetricAssetsValue">Contacto y proyecto académico</span></div>
+                    <div class="metric print"><span data-key="qaMetricLayoutLabel">[PDF]</span><span data-key="qaMetricLayoutValue">Vista de impresión</span></div>
+                </div>
+
+                <div class="qa-checklist-group">
+                    <h4 class="qa-group-title" data-key="qaCheckCat1">Perfil y contenido</h4>
+                    <ul class="qa-report-list">
+                        <li data-key="qaCheck1_1">El puesto y los estudios están indicados con claridad</li>
+                        <li data-key="qaCheck1_2">Los conocimientos técnicos figuran como básicos</li>
+                    </ul>
+                </div>
+                <div class="qa-checklist-group">
+                    <h4 class="qa-group-title" data-key="qaCheckCat2">Experiencia y proyecto</h4>
+                    <ul class="qa-report-list">
+                        <li data-key="qaCheck2_1">La experiencia laboral refleja el CV adjunto</li>
+                        <li data-key="qaCheck2_2">El proyecto académico figura en desarrollo</li>
+                    </ul>
+                </div>
+                <div class="qa-checklist-group">
+                    <h4 class="qa-group-title" data-key="qaCheckCat3">Diseño y exportación</h4>
+                    <ul class="qa-report-list">
+                        <li data-key="qaCheck3_1">La página incluye estilos responsive</li>
+                        <li data-key="qaCheck3_2">Está disponible el botón de imprimir o guardar PDF</li>
+                    </ul>
+                </div>
+                <div class="qa-checklist-group">
+                    <h4 class="qa-group-title" data-key="qaCheckCat4">Enlaces e idiomas</h4>
+                    <ul class="qa-report-list">
+                        <li data-key="qaCheck4_1">Están incluidos los enlaces de contacto y del proyecto</li>
+                        <li data-key="qaCheck4_2">El contenido está traducido al español y al inglés</li>
+                        <li data-key="qaCheck4_3">El título y la descripción corresponden al perfil QA trainee</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="body-grid">
+        
+        <div class="main-col">
+            <section class="section" data-section="summary" data-qa-label="clear content">
+                <span class="section-label" data-key="labelSummary">PERFIL</span>
+                <h3 class="section-title" data-key="profileTitle">Resumen profesional</h3>
+                <p class="paragraph" data-key="profileText">Estudiante de Ingeniería en Informática en la Universidad de Buenos Aires (UBA) y formada en Testing Master en Fundación Empujar IT (2025). Estoy desarrollando fundamentos de testing manual y programación, con conocimientos básicos de Python, SQL/MySQL, Git, GitHub, HTML, CSS y JavaScript. Busco mi primera oportunidad en QA o IT.</p>
+            </section>
+
+            <section class="section" data-section="can-help" data-qa-label="support">
+                <span class="section-label" data-key="helpLabel">SOPORTE</span>
+                <h3 class="section-title" data-key="helpTitle">Conocimientos de QA en formación</h3>
+                <ul class="focus-list">
+                    <li data-key="help1">Practicar testing manual con checklists y casos de prueba</li>
+                    <li data-key="help2">Documentar pasos y resultados esperados con claridad</li>
+                    <li data-key="help3">Reportar incidencias con pasos para reproducirlas</li>
+                    <li data-key="help4">Revisar requisitos y compararlos con el comportamiento observado</li>
+                    <li data-key="help5">Comprobar flujos básicos, enlaces y validaciones de formularios</li>
+                    <li data-key="help6">Seguir aprendiendo mediante materias y proyectos académicos</li>
+                </ul>
+            </section>
+
+            <section class="section portfolio-projects" data-section="portfolio-projects" data-qa-label="practice projects">
+                <span class="section-label" data-key="portfolioProjectsLabel">TRABAJO ACADÉMICO</span>
+                <h3 class="section-title" data-key="portfolioProjectsTitle">Proyecto académico · En desarrollo</h3>
+                <ul class="bullet-list portfolio-project-list">
+                    <li>
+                        <a class="project-link" href="https://github.com/jmeza03/tp_back" target="_blank" rel="noopener noreferrer" data-key="projectLinkTitle">Sistema de Reservas de Canchas</a><span data-key="portfolioProject1">: proyecto grupal de backend para Introducción al Desarrollo de Software. El repositorio tiene una estructura inicial con Flask/MySQL y código para socios y canchas; reservas, estados, validaciones y pruebas siguen en desarrollo.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section" data-section="experience" data-qa-label="transferable">
+                <span class="section-label" data-key="labelExperience">EXPERIENCIA</span>
+                <h3 class="section-title" data-key="experienceTitle">Experiencia laboral</h3>
+                <div class="item">
+                    <div class="item-header">
+                        <h4 class="item-title" data-key="experienceRole">Soporte Digital y Administrativo</h4>
+                        <span class="item-date" data-key="experienceDates">2022 – 2024</span>
+                    </div>
+                    <div class="item-subtitle" data-key="experienceCompany">Wussler Construcciones</div>
+                    <ul class="bullet-list">
+                        <li data-key="exp1">Preparé y organicé dossiers y brochures para clientes, manteniendo ordenadas las carpetas digitales y referencias de versiones.</li>
+                        <li data-key="exp2">Revisé formatos, calidad de imagen, consistencia de layout e información faltante antes de compartir materiales.</li>
+                        <li data-key="exp3">Usé checklists para detectar problemas de presentación y archivos antes de la entrega.</li>
+                        <li data-key="exp4">Organicé carpetas de proyectos, referencias y actualizaciones de tickets para facilitar el traspaso de tareas.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section" data-section="education" data-qa-label="training">
+                <span class="section-label" data-key="labelEducation">EDUCACIÓN</span>
+                <h3 class="section-title" data-key="educationTitle">Educación</h3>
+                <div class="item">
+                    <div class="item-header">
+                        <h4 class="item-title" data-key="educationDegree">Ingeniería en Informática</h4>
+                        <span class="item-date" data-key="educationDates">En curso</span>
+                    </div>
+                    <div class="item-subtitle" data-key="educationSchool">Universidad de Buenos Aires (UBA)</div>
+                    <p class="paragraph" data-key="educationText">Carrera de grado en curso.</p>
+                </div>
+            </section>
+
+            <section class="section portfolio-note" data-section="html-resume">
+                <span class="section-label" data-key="htmlResumeLabel">CV HTML</span>
+                <h3 class="section-title" data-key="htmlResumeTitle">Acerca de este CV online</h3>
+                <p class="paragraph" data-key="htmlResumeText">Este CV bilingüe conserva sus herramientas interactivas de checklist QA y de impresión a PDF. Presenta mis estudios actuales, formación en testing, conocimientos técnicos básicos y un proyecto académico que sigue en desarrollo.</p>
+            </section>
+        </div>
+
+        <aside class="side-col" data-qa-label="grouped">
+            <section class="section" data-section="design-production" data-qa-label="grouped">
+                <span class="section-label" data-key="digitalProductionLabel">DESARROLLO</span>
+                <h3 class="section-title" data-key="digitalProductionTitle">Fundamentos de programación</h3>
+                <div class="tags-container">
+                    <span class="skill-tag" data-key="designTag1">Python (Básico)</span>
+                    <span class="skill-tag" data-key="designTag2">SQL / MySQL (Básico)</span>
+                    <span class="skill-tag" data-key="designTag3">Git (Básico)</span>
+                    <span class="skill-tag" data-key="designTag4">GitHub (Básico)</span>
+                    <span class="skill-tag" data-key="designTag5">HTML (Básico)</span>
+                    <span class="skill-tag" data-key="designTag6">CSS (Básico)</span>
+                    <span class="skill-tag" data-key="designTag7">JavaScript (Básico)</span>
+                    <span class="skill-tag" data-key="designTag8">Fundamentos de programación (Básico)</span>
+                </div>
+            </section>
+
+            <section class="section" data-section="qa-testing" data-qa-label="junior basics">
+                <span class="section-label" data-key="qaTestingLabel">QA / TESTING</span>
+                <h3 class="section-title" data-key="qaTestingTitle">QA / Testing</h3>
+                <div class="tags-container">
+                    <span class="skill-tag" data-key="workflowTag1">Fundamentos de Testing Manual</span>
+                    <span class="skill-tag" data-key="workflowTag2">Revisión con checklists</span>
+                    <span class="skill-tag" data-key="workflowTag3">Reporte de incidencias</span>
+                    <span class="skill-tag" data-key="workflowTag4">Validación de requisitos</span>
+                    <span class="skill-tag" data-key="workflowTag5">Casos de prueba</span>
+                    <span class="skill-tag" data-key="workflowTag6">Resultados esperados y reales</span>
+                </div>
+            </section>
+
+            <section class="section" data-section="workflow-documentation" data-qa-label="organized">
+                <span class="section-label" data-key="workflowDocsLabel">WORKFLOW</span>
+                <h3 class="section-title" data-key="workflowDocsTitle">Herramientas y organización</h3>
+                <div class="tags-container">
+                    <span class="skill-tag" data-key="docsTag1">Navegación en Jira</span>
+                    <span class="skill-tag" data-key="docsTag2">Notion</span>
+                    <span class="skill-tag" data-key="docsTag3">Confluence (familiarizada)</span>
+                    <span class="skill-tag" data-key="docsTag4">Google Workspace</span>
+                    <span class="skill-tag" data-key="docsTag5">Microsoft Excel</span>
+                    <span class="skill-tag" data-key="docsTag6">Documentación organizada</span>
+                    <span class="skill-tag" data-key="docsTag7">Seguimiento de tickets y versiones</span>
+                </div>
+            </section>
+
+            <section class="section" data-section="ai-web-basics" data-qa-label="support">
+                <span class="section-label" data-key="aiWebLabel">WEB</span>
+                <h3 class="section-title" data-key="aiWebTitle">Tecnologías web</h3>
+                <div class="tags-container">
+                    <span class="skill-tag" data-key="aiTag1">HTML (Básico)</span>
+                    <span class="skill-tag" data-key="aiTag2">CSS (Básico)</span>
+                    <span class="skill-tag" data-key="aiTag3">JavaScript (Básico)</span>
+                    <span class="skill-tag" data-key="aiTag4">Python (Básico)</span>
+                    <span class="skill-tag" data-key="aiTag5">SQL / MySQL (Básico)</span>
+                    <span class="skill-tag" data-key="aiTag6">Git (Básico)</span>
+                    <span class="skill-tag" data-key="aiTag7">GitHub (Básico)</span>
+                    <span class="skill-tag" data-key="aiTag8">Aprendizaje en materias</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <span class="section-label" data-key="certificationsLabel">CERTIFICACIONES</span>
+                <h3 class="section-title" data-key="certificationsTitle">Certificaciones</h3>
+                <div class="cert-item">
+                    <span class="cert-title">Testing Master</span>
+                    <span class="cert-meta">Fundación Empujar IT | 2025</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-title">Intro to Data Analytics</span>
+                    <span class="cert-meta">Chicas en Tecnología | 2025</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-title">Basic Cybersecurity</span>
+                    <span class="cert-meta">Academia BA | 2024</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <span class="section-label" data-key="languagesLabel">IDIOMAS</span>
+                <h3 class="section-title" data-key="languagesTitle">Idiomas</h3>
+                <div class="cert-item">
+                    <span class="cert-title" data-key="lang1Title">Español</span>
+                    <span class="cert-meta" data-key="lang1Meta">Nativo</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-title" data-key="lang2Title">Inglés</span>
+                    <span class="cert-meta" data-key="lang2Meta">Lectura técnica y comprensión de textos</span>
+                </div>
+            </section>
+
+        </div>
     </div>
-    <nav class="contacts" aria-label="Contacto / Contact">
-      <span data-i18n="location">Zona Oeste, Buenos Aires</span>
-      <a href="mailto:agustinaburellitj@gmail.com">agustinaburellitj@gmail.com</a>
-      <a href="tel:+541125967991">+54 11 2596 7991</a>
-      <a href="https://github.com/agustinaburellitj-code" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/agustina-burelli/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </nav>
-    <div class="body-grid">
-      <main>
-        <section aria-labelledby="project-heading">
-          <h2 id="project-heading" data-i18n="projectHeading">Proyecto académico</h2>
-          <h3 data-i18n="projectTitle">Sistema de reservas de canchas · Proyecto grupal en desarrollo</h3>
-          <p data-i18n="projectText">Trabajo de Introducción al Desarrollo de Software. El repositorio contiene una estructura inicial de backend con Flask y MySQL y código para socios y canchas. El sistema de reservas, los estados, las validaciones y las pruebas siguen en desarrollo; el enlace muestra el avance del equipo, no un producto terminado.</p>
-          <a class="project-link" href="https://github.com/jmeza03/tp_back" target="_blank" rel="noopener noreferrer" data-i18n="projectLink">Ver repositorio del equipo en GitHub</a>
-        </section>
-        <section aria-labelledby="experience-heading">
-          <h2 id="experience-heading" data-i18n="experienceHeading">Experiencia laboral</h2>
-          <h3 data-i18n="experienceTitle">Soporte Digital y Administrativo · Wussler Construcciones</h3>
-          <p class="subtle">2022–2024</p>
-          <ul>
-            <li data-i18n="experience1">Organicé documentación, carpetas digitales, nombres de archivos y referencias de versiones para revisión interna.</li>
-            <li data-i18n="experience2">Revisé formatos, información faltante y consistencia de materiales antes de compartirlos con clientes.</li>
-            <li data-i18n="experience3">Colaboré en el traspaso de información y el seguimiento de actualizaciones de proyectos.</li>
-          </ul>
-        </section>
-        <section aria-labelledby="education-heading">
-          <h2 id="education-heading" data-i18n="educationHeading">Educación</h2>
-          <h3 data-i18n="educationTitle">Ingeniería en Informática · Universidad de Buenos Aires (UBA)</h3>
-          <p class="subtle" data-i18n="educationStatus">En curso</p>
-        </section>
-      </main>
-      <aside aria-label="Formación y conocimientos / Training and skills">
-        <section aria-labelledby="testing-heading">
-          <h2 id="testing-heading" data-i18n="testingHeading">Formación en QA</h2>
-          <h3>Testing Master · Fundación Empujar IT</h3>
-          <p class="subtle">2025</p>
-          <p data-i18n="testingText">Fundamentos de testing manual, revisión con checklists, reporte de incidencias y validación de requisitos.</p>
-        </section>
-        <section aria-labelledby="skills-heading">
-          <h2 id="skills-heading" data-i18n="skillsHeading">Conocimientos técnicos</h2>
-          <ul class="tags">
-            <li><strong>Python</strong><span data-i18n="basic">Básico</span></li>
-            <li><strong>SQL / MySQL</strong><span data-i18n="basic">Básico</span></li>
-            <li><strong>Git / GitHub</strong><span data-i18n="basic">Básico</span></li>
-            <li><strong>HTML / CSS</strong><span data-i18n="basic">Básico</span></li>
-            <li><strong>JavaScript</strong><span data-i18n="basic">Básico</span></li>
-          </ul>
-        </section>
-        <section aria-labelledby="language-heading">
-          <h2 id="language-heading" data-i18n="languagesHeading">Idiomas</h2>
-          <p data-i18n="spanish">Español: nativo</p>
-          <p data-i18n="english">Inglés: lectura técnica y comprensión de textos</p>
-        </section>
-      </aside>
-    </div>
-    <footer>
-      <span data-i18n="footer">CV online</span>:
-      <a href="https://agustinaburellitj-code.github.io/Agustina-Burelli-CV/">agustinaburellitj-code.github.io/Agustina-Burelli-CV/</a>
+    </main>
+    
+    <footer class="footer" data-qa-label="PDF clean">
+        <span data-key="footerText">Estudiante de Ingeniería en Informática | QA Trainee · CV</span>
+        <a class="footer-online-link" href="https://agustinaburellitj-code.github.io/Agustina-Burelli-CV/" target="_blank" rel="noopener noreferrer">
+            <span data-key="portfolioLabel">CV online / Portfolio</span>
+            <span class="print-online-url">agustinaburellitj-code.github.io/Agustina-Burelli-CV/</span>
+        </a>
     </footer>
-  </div>
-  <script>
+
+</div>
+
+<div class="qa-scanner" aria-hidden="true" role="img"></div>
+<div class="qa-console" aria-hidden="true" aria-live="polite">
+    <div class="qa-console-header" data-key="qaConsoleHeader">Notas de revisión QA</div>
+    <ul class="qa-log" aria-hidden="false"></ul>
+</div>
+
+<script>
+    console.log("QA note: This resume keeps its bilingual content, responsive layout, print controls, and interactive QA checklist.");
+
     const translations = {
-      es: {
-        title: "Agustina Burelli | Estudiante de Ingeniería en Informática | QA Trainee",
-        description: "Agustina Burelli, estudiante de Ingeniería en Informática en la UBA y QA Trainee. Formación en testing manual y conocimientos básicos de Python, SQL/MySQL y desarrollo web.",
-        ogDescription: "Portfolio profesional de Agustina Burelli: formación en testing, conocimientos técnicos básicos y proyecto académico de backend en desarrollo.",
-        role: "Estudiante de Ingeniería en Informática | QA Trainee",
-        intro: "Estudio Ingeniería en Informática en la UBA y me formé en fundamentos de testing manual. Estoy desarrollando conocimientos básicos de programación, bases de datos y herramientas web. Busco mi primera oportunidad profesional en IT, especialmente en QA.",
-        language: "Idioma",
-        print: "Imprimir / Guardar PDF",
-        location: "Zona Oeste, Buenos Aires",
-        projectHeading: "Proyecto académico",
-        projectTitle: "Sistema de reservas de canchas · Proyecto grupal en desarrollo",
-        projectText: "Trabajo de Introducción al Desarrollo de Software. El repositorio contiene una estructura inicial de backend con Flask y MySQL y código para socios y canchas. El sistema de reservas, los estados, las validaciones y las pruebas siguen en desarrollo; el enlace muestra el avance del equipo, no un producto terminado.",
-        projectLink: "Ver repositorio del equipo en GitHub",
-        experienceHeading: "Experiencia laboral",
-        experienceTitle: "Soporte Digital y Administrativo · Wussler Construcciones",
-        experience1: "Organicé documentación, carpetas digitales, nombres de archivos y referencias de versiones para revisión interna.",
-        experience2: "Revisé formatos, información faltante y consistencia de materiales antes de compartirlos con clientes.",
-        experience3: "Colaboré en el traspaso de información y el seguimiento de actualizaciones de proyectos.",
-        educationHeading: "Educación",
-        educationTitle: "Ingeniería en Informática · Universidad de Buenos Aires (UBA)",
-        educationStatus: "En curso",
-        testingHeading: "Formación en QA",
-        testingText: "Fundamentos de testing manual, revisión con checklists, reporte de incidencias y validación de requisitos.",
-        skillsHeading: "Conocimientos técnicos",
-        basic: "Básico",
-        languagesHeading: "Idiomas",
-        spanish: "Español: nativo",
-        english: "Inglés: lectura técnica y comprensión de textos",
-        footer: "CV online",
-        photoAlt: "Fotografía de Agustina Burelli"
-      },
-      en: {
-        title: "Agustina Burelli | Informatics Engineering Student | QA Trainee",
-        description: "Agustina Burelli, Informatics Engineering student at the University of Buenos Aires and QA Trainee. Training in manual testing and basic knowledge of Python, SQL/MySQL and web development.",
-        ogDescription: "Agustina Burelli's professional portfolio: testing training, basic technical skills and an academic backend project in progress.",
-        role: "Informatics Engineering Student | QA Trainee",
-        intro: "I study Informatics Engineering at the University of Buenos Aires and have trained in manual testing fundamentals. I am developing basic skills in programming, databases and web tools. I am seeking my first professional opportunity in IT, particularly in QA.",
-        language: "Language",
-        print: "Print / Save PDF",
-        location: "Western Buenos Aires",
-        projectHeading: "Academic project",
-        projectTitle: "Sports court booking system · Group project in progress",
-        projectText: "Coursework for Introduction to Software Development. The repository contains an initial Flask and MySQL backend structure and code for members and courts. Booking, status handling, validations and tests are still in development; the link shows the team's progress, not a finished product.",
-        projectLink: "View the team's GitHub repository",
-        experienceHeading: "Work experience",
-        experienceTitle: "Digital and Administrative Support · Wussler Construcciones",
-        experience1: "Organized documents, digital folders, file names and version references for internal review.",
-        experience2: "Checked formats, missing information and material consistency before sharing with clients.",
-        experience3: "Helped hand off information and track project updates.",
-        educationHeading: "Education",
-        educationTitle: "Informatics Engineering · University of Buenos Aires (UBA)",
-        educationStatus: "In progress",
-        testingHeading: "QA training",
-        testingText: "Manual testing fundamentals, checklist based review, issue reporting and requirements validation.",
-        skillsHeading: "Technical skills",
-        basic: "Basic",
-        languagesHeading: "Languages",
-        spanish: "Spanish: native",
-        english: "English: technical reading comprehension",
-        footer: "Online CV",
-        photoAlt: "Photo of Agustina Burelli"
-      }
+        en: {
+            languageLabel: 'Language',
+            qaButton: 'Show QA Checklist',
+            qaButtonActive: 'Hide QA Checklist',
+            printButton: 'Print / Save PDF',
+            pageTitle: 'Agustina Burelli — Informatics Engineering Student | QA Trainee',
+            pageDescription: 'Agustina Burelli, Informatics Engineering student at the University of Buenos Aires and QA Trainee. Manual testing training and basic technical skills.',
+            ogDescription: 'Professional portfolio with testing training, basic technical skills, and an academic backend project in progress.',
+            role: 'Informatics Engineering Student | QA Trainee',
+            roleSubtitle: 'Manual Testing · Python · SQL/MySQL · Git/GitHub · HTML · CSS · JavaScript (Basic)',
+            aiNote: 'Seeking an entry-level opportunity in QA or IT. Technical skills are at a basic, learning stage.',
+            location: 'Buenos Aires, Zona Oeste',
+            phone: '+54 11 2596 7991',
+            githubLabel: 'GitHub',
+            linkedinLabel: 'LinkedIn',
+            portfolioLabel: 'Online CV / Portfolio',
+            profileTitle: 'Professional Summary',
+            profileText: 'Informatics Engineering student at the University of Buenos Aires (UBA) and Testing Master trainee at Fundación Empujar IT (2025). Building foundational skills in manual testing and programming, with basic knowledge of Python, SQL/MySQL, Git, GitHub, HTML, CSS, and JavaScript. Seeking a first opportunity in QA or IT.',
+            labelSummary: 'PROFILE',
+            experienceTitle: 'Work Experience',
+            experienceRole: 'Digital and Administrative Support',
+            experienceDates: '2022 – 2024',
+            experienceCompany: 'Wussler Construcciones',
+            exp1: 'Prepared and organized client dossiers and brochures, keeping digital folders and version references in order.',
+            exp2: 'Reviewed materials for format, image quality, layout consistency, and missing information before delivery.',
+            exp3: 'Used checklists to catch presentation and file issues before sharing materials.',
+            exp4: 'Organized project folders, references, and ticket updates for team handoffs.',
+            exp5: '',
+            labelExperience: 'EXPERIENCE',
+            helpLabel: 'SUPPORT',
+            helpTitle: 'QA skills in development',
+            help1: 'Practice manual testing with checklists and test cases',
+            help2: 'Document clear steps and expected results',
+            help3: 'Report issues with steps to reproduce',
+            help4: 'Review requirements against observed behavior',
+            help5: 'Check basic flows, links, and form validation',
+            help6: 'Keep learning through academic projects and practice',
+            portfolioProjectsLabel: 'ACADEMIC WORK',
+            portfolioProjectsTitle: 'Academic Project · In Progress',
+            projectLinkTitle: 'Sports Court Booking System',
+            portfolioProject1: ': group backend project for the Introduction to Software Development course. The repository has an initial Flask/MySQL structure and code for members and courts; reservations, states, validations, and tests remain in development.',
+            portfolioProject2: '',
+            portfolioProject3: '',
+            educationTitle: 'Education',
+            educationDegree: 'Informatics Engineering',
+            educationDates: 'In progress',
+            educationSchool: 'University of Buenos Aires (UBA)',
+            educationText: 'Undergraduate engineering studies.',
+            labelEducation: 'EDUCATION',
+            labelSkills: 'SKILLS',
+            digitalProductionLabel: 'DEVELOPMENT',
+            digitalProductionTitle: 'Programming Foundations',
+            qaFocusLabel: 'QA FOUNDATIONS',
+            qaFocusTitle: 'Testing Knowledge',
+            qaFocus1: 'Manual testing fundamentals',
+            qaFocus2: 'Test cases and checklists',
+            qaFocus3: 'Issue reporting',
+            qaFocus4: 'Requirements validation',
+            qaFocus5: 'Expected and observed results',
+            qaFocus6: 'Responsive behavior checks',
+            visualQaLabel: 'TECH STACK',
+            visualQaTitle: 'Technical Skills',
+            designTag1: 'Python (Basic)',
+            designTag2: 'SQL / MySQL (Basic)',
+            designTag3: 'Git (Basic)',
+            designTag4: 'GitHub (Basic)',
+            designTag5: 'HTML (Basic)',
+            designTag6: 'CSS (Basic)',
+            designTag7: 'JavaScript (Basic)',
+            designTag8: 'Programming Fundamentals (Basic)',
+            workflowLabel: 'WORKFLOW',
+            workflowTitle: 'Testing & Quality',
+            qaTestingLabel: 'QA / TESTING',
+            qaTestingTitle: 'QA / Testing',
+            workflowTag1: 'Manual Testing Foundations',
+            workflowTag2: 'Checklist-Based Review',
+            workflowTag3: 'Issue Reporting',
+            workflowTag4: 'Requirement Validation',
+            workflowTag5: 'Test Cases',
+            workflowTag6: 'Expected vs. Actual Results',
+            brandSafetyLabel: 'TESTING PRACTICE',
+            brandSafetyTitle: 'QA Practices',
+            brandTag1: 'Review acceptance criteria',
+            brandTag2: 'Check positive and negative cases',
+            brandTag3: 'Record reproducible steps',
+            brandTag4: 'Compare expected and actual results',
+            brandTag5: 'Retest after a correction',
+            brandTag6: 'Keep evidence and notes organized',
+            workflowDocsLabel: 'WORKFLOW',
+            workflowDocsTitle: 'Tools & Organization',
+            docsTag1: 'Jira (navigation)',
+            docsTag2: 'Notion',
+            docsTag3: 'Confluence (familiar)',
+            docsTag4: 'Google Workspace',
+            docsTag5: 'Microsoft Excel',
+            docsTag6: 'Organized documentation',
+            docsTag7: 'Ticket and version tracking',
+            aiWebLabel: 'WEB',
+            aiWebTitle: 'Web Technologies',
+            aiTag1: 'HTML (Basic)',
+            aiTag2: 'CSS (Basic)',
+            aiTag3: 'JavaScript (Basic)',
+            aiTag4: 'Python (Basic)',
+            aiTag5: 'SQL / MySQL (Basic)',
+            aiTag6: 'Git (Basic)',
+            aiTag7: 'GitHub (Basic)',
+            aiTag8: 'Learning through coursework',
+            toolsTitle: 'Tools',
+            toolsTag1: 'Visual Studio Code',
+            toolsTag2: 'Jira (navigation)',
+            toolsTag3: 'Google Workspace',
+            toolsTag4: 'Excel',
+            toolsTag5: 'Notion',
+            toolsTag6: 'GitHub',
+            certificationsTitle: 'Certifications',
+            languagesTitle: 'Languages',
+            lang1Title: 'Spanish',
+            lang1Meta: 'Native',
+            lang2Title: 'English',
+            lang2Meta: 'Technical Reading Proficiency',
+            profileTagline: 'Informatics Engineering Student | QA Trainee',
+            profileSubtitle: 'Manual testing · Programming fundamentals',
+            sectionHeaderLabel: 'HEADER',
+            toolsLabel: 'TOOLS',
+            certificationsLabel: 'CERTIFICATIONS',
+            languagesLabel: 'LANGUAGES',
+            htmlResumeLabel: 'HTML RESUME',
+            htmlResumeTitle: 'About this online resume',
+            htmlResumeText: 'This bilingual resume keeps its interactive QA checklist and print-to-PDF controls. It presents my current studies, testing training, basic technical skills, and an academic project that is still in progress.',
+            qaReportTitle: 'Resume QA Checklist',
+            qaStatusText: 'Interactive review tools',
+            qaReportText: 'Use this checklist to inspect the resume\'s content, links, responsive layout, translations, and print output.',
+            qaCheckCat1: 'Profile & Content',
+            qaCheck1_1: 'Role and study information are clearly stated',
+            qaCheck1_2: 'Technical skills are labeled as basic',
+            qaCheckCat2: 'Experience & Project',
+            qaCheck2_1: 'Work history reflects the attached resume',
+            qaCheck2_2: 'Academic project is identified as in progress',
+            qaCheckCat3: 'Layout & Export',
+            qaCheck3_1: 'Responsive styles are included',
+            qaCheck3_2: 'Print / Save PDF control is available',
+            qaCheckCat4: 'Links & Languages',
+            qaCheck4_1: 'Contact and project links are present',
+            qaCheck4_2: 'Spanish and English translations are included',
+            qaCheck4_3: 'Page title and description match the QA trainee profile',
+            mission1Title: 'Mission 01',
+            mission1Text: 'Review the profile title and study details.',
+            mission2Title: 'Mission 02',
+            mission2Text: 'Check skill levels and project status.',
+            mission3Title: 'Mission 03',
+            mission3Text: 'Follow the contact and project links.',
+            mission4Title: 'Mission 04',
+            mission4Text: 'Inspect the mobile layout and print preview.',
+            qaMicrocopy: 'Optional checklist tools for reviewing content, links, translations, responsive behavior, and print output.',
+            qaConsoleHeader: 'QA Review Notes',
+            qaMetricContrastLabel: '[Profile]',
+            qaMetricContrastValue: 'Check that the target role and education are easy to find.',
+            qaMetricAssetsLabel: '[Links]',
+            qaMetricAssetsValue: 'Contact and academic project',
+            qaMetricLayoutLabel: '[PDF]',
+            qaMetricLayoutValue: 'Print preview',
+            qaLogStart: 'Opening the resume QA checklist...',
+            qaLogContrast: 'Content: Review profile and technical skills',
+            qaLogAssets: 'Links: Check contact and project targets',
+            qaLogLayout: 'Print: Review PDF output',
+            qaLogChecklist: 'Spanish and English content loaded',
+            qaLogDone: 'QA checklist view active.',
+            qaChecklistTitle: 'QA Review Checklist',
+            check1: 'Profile and education details',
+            check2: 'Technical skill levels',
+            check3: 'Project status and link',
+            check4: 'Mobile layout',
+            check5: 'Print / PDF view',
+            footerText: 'Informatics Engineering Student | QA Trainee · Resume',
+            copiedEmail: 'Email copied',
+            copiedEmailEs: 'Email copied',
+            photoTooltip: 'Profile photo\nFormat: WebP with PNG fallback\nAlt text: Present\nDisplay: Kept from the original portfolio'
+        },
+        es: {
+            languageLabel: 'Idioma',
+            qaButton: 'Ver checklist QA',
+            qaButtonActive: 'Ocultar checklist QA',
+            printButton: 'Imprimir / PDF',
+            pageTitle: 'Agustina Burelli — Estudiante de Ingeniería en Informática | QA Trainee',
+            pageDescription: 'Agustina Burelli, estudiante de Ingeniería en Informática en la UBA y QA Trainee. Formación en testing manual y conocimientos técnicos básicos.',
+            ogDescription: 'Portfolio profesional con formación en testing, conocimientos técnicos básicos y un proyecto académico de backend en desarrollo.',
+            role: 'Estudiante de Ingeniería en Informática | QA Trainee',
+            roleSubtitle: 'Testing manual · Python · SQL/MySQL · Git/GitHub · HTML · CSS · JavaScript (Básico)',
+            aiNote: 'Busco una primera oportunidad en QA o IT. Mis conocimientos técnicos son básicos y están en formación.',
+            location: 'Buenos Aires, Zona Oeste',
+            phone: '+54 11 2596 7991',
+            githubLabel: 'GitHub',
+            linkedinLabel: 'LinkedIn',
+            portfolioLabel: 'CV online / Portfolio',
+            profileTitle: 'Resumen profesional',
+            profileText: 'Estudiante de Ingeniería en Informática en la Universidad de Buenos Aires (UBA) y formada en Testing Master en Fundación Empujar IT (2025). Estoy desarrollando fundamentos de testing manual y programación, con conocimientos básicos de Python, SQL/MySQL, Git, GitHub, HTML, CSS y JavaScript. Busco mi primera oportunidad en QA o IT.',
+            labelSummary: 'PERFIL',
+            experienceTitle: 'Experiencia laboral',
+            experienceRole: 'Soporte Digital y Administrativo',
+            experienceDates: '2022 – 2024',
+            experienceCompany: 'Wussler Construcciones',
+            exp1: 'Preparé y organicé dossiers y brochures para clientes, manteniendo ordenadas las carpetas digitales y referencias de versiones.',
+            exp2: 'Revisé formatos, calidad de imagen, consistencia de layout e información faltante antes de compartir materiales.',
+            exp3: 'Usé checklists para detectar problemas de presentación y archivos antes de la entrega.',
+            exp4: 'Organicé carpetas de proyectos, referencias y actualizaciones de tickets para facilitar el traspaso de tareas.',
+            exp5: '',
+            labelExperience: 'EXPERIENCIA',
+            helpLabel: 'SOPORTE',
+            helpTitle: 'Conocimientos de QA en formación',
+            help1: 'Practicar testing manual con checklists y casos de prueba',
+            help2: 'Documentar pasos y resultados esperados con claridad',
+            help3: 'Reportar incidencias con pasos para reproducirlas',
+            help4: 'Revisar requisitos y compararlos con el comportamiento observado',
+            help5: 'Comprobar flujos básicos, enlaces y validaciones de formularios',
+            help6: 'Seguir aprendiendo mediante materias y proyectos académicos',
+            portfolioProjectsLabel: 'TRABAJO ACADÉMICO',
+            portfolioProjectsTitle: 'Proyecto académico · En desarrollo',
+            projectLinkTitle: 'Sistema de Reservas de Canchas',
+            portfolioProject1: ': proyecto grupal de backend para Introducción al Desarrollo de Software. El repositorio tiene una estructura inicial con Flask/MySQL y código para socios y canchas; reservas, estados, validaciones y pruebas siguen en desarrollo.',
+            portfolioProject2: '',
+            portfolioProject3: '',
+            educationTitle: 'Educación',
+            educationDegree: 'Ingeniería en Informática',
+            educationDates: 'En curso',
+            educationSchool: 'Universidad de Buenos Aires (UBA)',
+            educationText: 'Carrera de grado en curso.',
+            labelEducation: 'EDUCACIÓN',
+            labelSkills: 'HABILIDADES',
+            digitalProductionLabel: 'DESARROLLO',
+            digitalProductionTitle: 'Fundamentos de programación',
+            qaFocusLabel: 'FUNDAMENTOS QA',
+            qaFocusTitle: 'Conocimientos de testing',
+            qaFocus1: 'Fundamentos de testing manual',
+            qaFocus2: 'Casos de prueba y checklists',
+            qaFocus3: 'Reporte de incidencias',
+            qaFocus4: 'Validación de requisitos',
+            qaFocus5: 'Resultados esperados y observados',
+            qaFocus6: 'Revisión de comportamiento responsive',
+            visualQaLabel: 'TECNOLOGÍAS',
+            visualQaTitle: 'Conocimientos técnicos',
+            designTag1: 'Python (Básico)',
+            designTag2: 'SQL / MySQL (Básico)',
+            designTag3: 'Git (Básico)',
+            designTag4: 'GitHub (Básico)',
+            designTag5: 'HTML (Básico)',
+            designTag6: 'CSS (Básico)',
+            designTag7: 'JavaScript (Básico)',
+            designTag8: 'Fundamentos de programación (Básico)',
+            workflowLabel: 'WORKFLOW',
+            workflowTitle: 'Testing y calidad',
+            qaTestingLabel: 'QA / TESTING',
+            qaTestingTitle: 'QA / Testing',
+            workflowTag1: 'Fundamentos de Testing Manual',
+            workflowTag2: 'Revisión con checklists',
+            workflowTag3: 'Reporte de incidencias',
+            workflowTag4: 'Validación de requisitos',
+            workflowTag5: 'Casos de prueba',
+            workflowTag6: 'Resultados esperados y reales',
+            brandSafetyLabel: 'PRÁCTICA DE TESTING',
+            brandSafetyTitle: 'Prácticas de QA',
+            brandTag1: 'Revisar criterios de aceptación',
+            brandTag2: 'Comprobar casos positivos y negativos',
+            brandTag3: 'Registrar pasos reproducibles',
+            brandTag4: 'Comparar resultados esperados y reales',
+            brandTag5: 'Repetir pruebas después de una corrección',
+            brandTag6: 'Organizar evidencia y notas',
+            workflowDocsLabel: 'WORKFLOW',
+            workflowDocsTitle: 'Herramientas y organización',
+            docsTag1: 'Navegación en Jira',
+            docsTag2: 'Notion',
+            docsTag3: 'Confluence (familiarizada)',
+            docsTag4: 'Google Workspace',
+            docsTag5: 'Microsoft Excel',
+            docsTag6: 'Documentación organizada',
+            docsTag7: 'Seguimiento de tickets y versiones',
+            aiWebLabel: 'WEB',
+            aiWebTitle: 'Tecnologías web',
+            aiTag1: 'HTML (Básico)',
+            aiTag2: 'CSS (Básico)',
+            aiTag3: 'JavaScript (Básico)',
+            aiTag4: 'Python (Básico)',
+            aiTag5: 'SQL / MySQL (Básico)',
+            aiTag6: 'Git (Básico)',
+            aiTag7: 'GitHub (Básico)',
+            aiTag8: 'Aprendizaje en materias',
+            toolsTitle: 'Herramientas',
+            toolsTag1: 'Visual Studio Code',
+            toolsTag2: 'Navegación en Jira',
+            toolsTag3: 'Google Workspace',
+            toolsTag4: 'Excel',
+            toolsTag5: 'Notion',
+            toolsTag6: 'GitHub',
+            certificationsTitle: 'Certificaciones',
+            languagesTitle: 'Idiomas',
+            lang1Title: 'Español',
+            lang1Meta: 'Nativo',
+            lang2Title: 'Inglés',
+            lang2Meta: 'Lectura técnica y comprensión de textos',
+            profileTagline: 'Estudiante de Ingeniería en Informática | QA Trainee',
+            profileSubtitle: 'Testing manual · Fundamentos de programación',
+            sectionHeaderLabel: 'ENCABEZADO',
+            toolsLabel: 'HERRAMIENTAS',
+            certificationsLabel: 'CERTIFICACIONES',
+            languagesLabel: 'IDIOMAS',
+            htmlResumeLabel: 'CV HTML',
+            htmlResumeTitle: 'Acerca de este CV online',
+            htmlResumeText: 'Este CV bilingüe conserva sus herramientas interactivas de checklist QA y de impresión a PDF. Presenta mis estudios actuales, formación en testing, conocimientos técnicos básicos y un proyecto académico que sigue en desarrollo.',
+            qaReportTitle: 'Checklist QA del CV',
+            qaStatusText: 'Herramientas interactivas de revisión',
+            qaReportText: 'Usá este checklist para revisar el contenido, los enlaces, la adaptación responsive, las traducciones y la salida de impresión.',
+            qaCheckCat1: 'Perfil y contenido',
+            qaCheck1_1: 'El puesto y los estudios están indicados con claridad',
+            qaCheck1_2: 'Los conocimientos técnicos figuran como básicos',
+            qaCheckCat2: 'Experiencia y proyecto',
+            qaCheck2_1: 'La experiencia laboral refleja el CV adjunto',
+            qaCheck2_2: 'El proyecto académico figura en desarrollo',
+            qaCheckCat3: 'Diseño y exportación',
+            qaCheck3_1: 'La página incluye estilos responsive',
+            qaCheck3_2: 'Está disponible el botón de imprimir o guardar PDF',
+            qaCheckCat4: 'Enlaces e idiomas',
+            qaCheck4_1: 'Están incluidos los enlaces de contacto y del proyecto',
+            qaCheck4_2: 'El contenido está traducido al español y al inglés',
+            qaCheck4_3: 'El título y la descripción corresponden al perfil QA trainee',
+            mission1Title: 'Misión 01',
+            mission1Text: 'Revisar el título del perfil y los datos de estudio.',
+            mission2Title: 'Misión 02',
+            mission2Text: 'Comprobar los niveles técnicos y el estado del proyecto.',
+            mission3Title: 'Misión 03',
+            mission3Text: 'Abrir los enlaces de contacto y del proyecto.',
+            mission4Title: 'Misión 04',
+            mission4Text: 'Revisar la vista en celular y la vista de impresión.',
+            qaMicrocopy: 'Checklist opcional para revisar contenido, enlaces, traducciones, comportamiento responsive y salida de impresión.',
+            qaConsoleHeader: 'Notas de revisión QA',
+            qaMetricContrastLabel: '[Perfil]',
+            qaMetricContrastValue: 'Comprobá que el puesto buscado y los estudios se encuentren fácilmente.',
+            qaMetricAssetsLabel: '[Enlaces]',
+            qaMetricAssetsValue: 'Contacto y proyecto académico',
+            qaMetricLayoutLabel: '[PDF]',
+            qaMetricLayoutValue: 'Vista de impresión',
+            qaLogStart: 'Abriendo el checklist QA del CV...',
+            qaLogContrast: 'Contenido: revisar perfil y conocimientos técnicos',
+            qaLogAssets: 'Enlaces: comprobar contacto y proyecto',
+            qaLogLayout: 'Impresión: revisar salida PDF',
+            qaLogChecklist: 'Contenido en español e inglés cargado',
+            qaLogDone: 'Checklist QA disponible.',
+            qaChecklistTitle: 'Checklist de revisión QA',
+            check1: 'Datos de perfil y educación',
+            check2: 'Niveles de conocimientos técnicos',
+            check3: 'Estado y enlace del proyecto',
+            check4: 'Vista en celular',
+            check5: 'Vista de impresión / PDF',
+            footerText: 'Estudiante de Ingeniería en Informática | QA Trainee · CV',
+            copiedEmail: 'Email copiado',
+            copiedEmailEs: 'Email copiado',
+            photoTooltip: 'Foto de perfil\nFormato: WebP con respaldo PNG\nTexto alternativo: presente\nSe conserva la imagen del portfolio original'
+        }
     };
 
-    function setLanguage(lang) {
-      const selected = translations[lang] ? lang : "es";
-      const copy = translations[selected];
-      document.documentElement.lang = selected;
-      document.getElementById("language").value = selected;
-      document.querySelectorAll("[data-i18n]").forEach(node => {
-        node.textContent = copy[node.dataset.i18n];
-      });
-      document.querySelectorAll("[data-alt]").forEach(node => {
-        node.alt = copy[node.dataset.alt];
-      });
-      document.title = copy.title;
-      document.querySelector('meta[name="description"]').content = copy.description;
-      document.querySelector('meta[property="og:title"]').content = copy.title;
-      document.querySelector('meta[property="og:description"]').content = copy.ogDescription;
-      document.querySelector('meta[property="og:locale"]').content = selected === "es" ? "es_AR" : "en_US";
-      const person = JSON.parse(document.getElementById("person-schema").textContent);
-      person.jobTitle = copy.role;
-      document.getElementById("person-schema").textContent = JSON.stringify(person);
-      try { localStorage.setItem("cv-language", selected); } catch (_) {}
-    }
-    document.getElementById("language").addEventListener("change", event => setLanguage(event.target.value));
-    document.getElementById("print").addEventListener("click", () => window.print());
-    let savedLanguage = "es";
-    try { savedLanguage = localStorage.getItem("cv-language") || "es"; } catch (_) {}
-    setLanguage(savedLanguage);
-  </script>
+    const keys = [
+        'languageLabel','qaButton','qaButtonActive','printButton','role','roleSubtitle','aiNote','location','phone','githubLabel','linkedinLabel','portfolioLabel','profileTitle','profileText',
+        'labelSummary','experienceTitle','experienceRole','experienceDates','experienceCompany','exp1','exp2','exp3','exp4','exp5',
+        'labelExperience','helpLabel','helpTitle','help1','help2','help3','help4','help5','help6','portfolioProjectsLabel','portfolioProjectsTitle','projectLinkTitle','portfolioProject1','portfolioProject2','portfolioProject3','educationTitle','educationDegree','educationDates','educationSchool','educationText','labelEducation',
+        'labelSkills','digitalProductionLabel','digitalProductionTitle','qaFocusLabel','qaFocusTitle','qaFocus1','qaFocus2','qaFocus3','qaFocus4','qaFocus5','qaFocus6',
+        'visualQaLabel','visualQaTitle','designTag1','designTag2','designTag3','designTag4','designTag5','designTag6','designTag7','designTag8',
+        'workflowLabel','workflowTitle','qaTestingLabel','qaTestingTitle','workflowTag1','workflowTag2','workflowTag3','workflowTag4','workflowTag5','workflowTag6',
+        'brandSafetyLabel','brandSafetyTitle','brandTag1','brandTag2','brandTag3','brandTag4','brandTag5','brandTag6',
+        'workflowDocsLabel','workflowDocsTitle','docsTag1','docsTag2','docsTag3','docsTag4','docsTag5','docsTag6','docsTag7',
+        'aiWebLabel','aiWebTitle','aiTag1','aiTag2','aiTag3','aiTag4','aiTag5','aiTag6','aiTag7','aiTag8',
+        'toolsLabel','toolsTitle','toolsTag1','toolsTag2','toolsTag3','toolsTag4','toolsTag5','toolsTag6',
+        'certificationsTitle','languagesTitle','lang1Title','lang1Meta','lang2Title','lang2Meta',
+        'profileTagline','profileSubtitle','sectionHeaderLabel','certificationsLabel','languagesLabel','htmlResumeLabel','htmlResumeTitle','htmlResumeText',
+        'qaReportTitle','qaStatusText','qaReportText',
+        'qaCheckCat1','qaCheck1_1','qaCheck1_2',
+        'qaCheckCat2','qaCheck2_1','qaCheck2_2',
+        'qaCheckCat3','qaCheck3_1','qaCheck3_2',
+        'qaCheckCat4','qaCheck4_1','qaCheck4_2','qaCheck4_3',
+        'qaMicrocopy','qaConsoleHeader',
+        'mission1Title','mission1Text','mission2Title','mission2Text','mission3Title','mission3Text','mission4Title','mission4Text',
+        'qaChecklistTitle','check1','check2','check3','check4','check5','footerText','photoTooltip',
+        'qaMetricContrastLabel','qaMetricContrastValue','qaMetricAssetsLabel','qaMetricAssetsValue','qaMetricLayoutLabel','qaMetricLayoutValue'
+    ];
+
+    const translateElements = () => {
+        const lang = localStorage.getItem('resumeLanguage') || 'es';
+        const translation = translations[lang] || translations.es;
+        keys.forEach(key => {
+            document.querySelectorAll(`[data-key="${key}"]`).forEach(node => {
+                if (node.tagName === 'DIV' && key === 'photoTooltip') {
+                    node.style.whiteSpace = 'pre-line';
+                }
+                node.textContent = translation[key] || node.textContent;
+            });
+        });
+    };
+
+    let _hasInitialLanguagePaint = false;
+
+    const setLanguage = (lang) => {
+        if (_hasInitialLanguagePaint) {
+            document.body.classList.add('is-translating');
+        }
+
+        localStorage.setItem('resumeLanguage', lang);
+        document.documentElement.lang = lang;
+        document.getElementById('language-select').value = lang;
+        translateElements();
+
+        const translation = translations[lang] || translations.es;
+        document.title = translation.pageTitle;
+        document.querySelector('meta[name="description"]').content = translation.pageDescription;
+        document.querySelector('meta[property="og:title"]').content = translation.pageTitle;
+        document.querySelector('meta[property="og:description"]').content = translation.ogDescription;
+        document.querySelector('meta[property="og:locale"]').content = lang === 'es' ? 'es_AR' : 'en_US';
+        const personSchema = document.querySelector('script[type="application/ld+json"]');
+        const personData = JSON.parse(personSchema.textContent);
+        personData.jobTitle = translation.role;
+        personSchema.textContent = JSON.stringify(personData);
+        const qaButton = document.getElementById('qa-toggle');
+        if (qaButton) {
+            qaButton.textContent = document.body.classList.contains('qa-inspector') ? translation.qaButtonActive : translation.qaButton;
+        }
+
+        if (document.body.classList.contains('qa-inspector')) {
+            runConsoleAudit();
+        }
+
+        if (_hasInitialLanguagePaint) {
+            window.setTimeout(() => document.body.classList.remove('is-translating'), 160);
+        }
+        _hasInitialLanguagePaint = true;
+    };
+
+    const copyEmail = () => {
+        const email = 'agustinaburellitj@gmail.com';
+        const copyToClipboard = () => {
+            if (navigator.clipboard?.writeText) {
+                return navigator.clipboard.writeText(email);
+            }
+
+            const tempInput = document.createElement('textarea');
+            tempInput.value = email;
+            tempInput.setAttribute('readonly', '');
+            tempInput.style.position = 'fixed';
+            tempInput.style.opacity = '0';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            const copied = document.execCommand('copy');
+            tempInput.remove();
+
+            return Promise.resolve();
+        };
+
+        copyToClipboard().then(() => {
+            const lang = localStorage.getItem('resumeLanguage') || 'es';
+            const message = translations[lang]?.copiedEmail || translations.en.copiedEmail;
+            const pill = document.getElementById('email-pill');
+            pill.textContent = message;
+            pill.style.color = '#2563eb';
+            setTimeout(() => {
+                pill.textContent = email;
+                pill.style.color = '';
+            }, 2000);
+        }).catch(() => {
+            const pill = document.getElementById('email-pill');
+            pill.textContent = 'Copy failed';
+        });
+    };
+
+    let _qaAuditRun = 0;
+
+    const triggerScanner = () => {
+        const scanner = document.querySelector('.qa-scanner');
+        if (!scanner) return;
+        scanner.style.animation = 'none';
+        scanner.offsetHeight;
+        scanner.style.animation = 'scanScreen 1.7s cubic-bezier(0.4, 0, 0.2, 1) forwards';
+    };
+
+    const runConsoleAudit = () => {
+        const ul = document.querySelector('.qa-log');
+        if (!ul) return;
+        ul.innerHTML = '';
+        const auditRun = ++_qaAuditRun;
+        const lang = localStorage.getItem('resumeLanguage') || 'es';
+        const t = translations[lang] || translations.en;
+        const steps = [
+            t.qaLogStart,
+            t.qaLogContrast,
+            t.qaLogAssets,
+            t.qaLogLayout,
+            t.qaLogChecklist,
+            t.qaLogDone
+        ];
+        steps.forEach((text, i) => {
+            setTimeout(() => {
+                if (auditRun !== _qaAuditRun) return;
+                const li = document.createElement('li');
+                li.textContent = text;
+                if (text.includes('Contrast') || text.includes('Auditoría')) li.style.color = '#1d4ed8';
+                if (text.includes('Assets') || text.includes('Control')) li.style.color = '#475569';
+                if (text.includes('Bilingual') || text.includes('bilingüe')) li.style.color = '#047857';
+                ul.appendChild(li);
+            }, i * 500);
+        });
+    };
+
+    const toggleQaMode = () => {
+        const body = document.body;
+        const button = document.getElementById('qa-toggle');
+        const report = document.getElementById('qa-report');
+        const isActive = body.classList.toggle('qa-inspector');
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+        report?.setAttribute('aria-hidden', String(!isActive));
+
+        const lang = localStorage.getItem('resumeLanguage') || 'es';
+        const t = translations[lang] || translations.en;
+        try {
+            button.textContent = isActive ? (t.qaButtonActive || 'Hide QA Checklist') : (t.qaButton || 'Show QA Checklist');
+        } catch (e) {
+            /* ignore */
+        }
+
+        if (isActive) {
+            const consoleEl = document.querySelector('.qa-console');
+            consoleEl?.classList.add('visible');
+            consoleEl?.setAttribute('aria-hidden', 'false');
+            runConsoleAudit();
+            triggerScanner();
+        } else {
+            _qaAuditRun++;
+            const ul = document.querySelector('.qa-log');
+            if (ul) ul.innerHTML = '';
+            const consoleEl = document.querySelector('.qa-console');
+            consoleEl?.classList.remove('visible');
+            consoleEl?.setAttribute('aria-hidden', 'true');
+        }
+    };
+
+    document.getElementById('language-select').addEventListener('change', (event) => {
+        setLanguage(event.target.value);
+    });
+
+    document.getElementById('qa-toggle').addEventListener('click', toggleQaMode);
+    document.getElementById('print-btn').addEventListener('click', () => window.print());
+    document.getElementById('email-pill').addEventListener('click', copyEmail);
+
+    setLanguage(localStorage.getItem('resumeLanguage') || 'es');
+</script>
+
 </body>
 </html>
