@@ -1,43 +1,29 @@
-# Agustina Burelli — Digital Production & QA Resume
+# Agustina Burelli · Portfolio profesional
 
-Interactive resume built with HTML, CSS, and JavaScript.
+CV web bilingüe (español e inglés) orientado a búsquedas de **QA Trainee** y primeras oportunidades en IT. Presenta los estudios de Ingeniería en Informática en la Universidad de Buenos Aires, la formación en testing y conocimientos técnicos de nivel básico.
 
-## Focus
+El [proyecto académico grupal de backend](https://github.com/jmeza03/tp_back) figura **en desarrollo**. El enlace muestra el avance del equipo: no atribuye a Agustina módulos específicos ni indica que el sistema esté terminado.
 
-- Digital production support
-- Visual QA
-- Asset review
-- Manual testing foundations
-- Ticket-based workflows
-- AI-assisted documentation with human review
+## Contenido
 
-## Features
+- Experiencia real en soporte digital y administrativo en Wussler Construcciones (2022–2024), resumida.
+- Formación Testing Master de Fundación Empujar IT (2025).
+- Python, SQL/MySQL, Git/GitHub, HTML/CSS y JavaScript, todos indicados como conocimientos básicos.
+- Fotografía existente en WebP con PNG de respaldo.
+- Selector de idioma, enlaces de contacto y botón de imprimir o guardar en PDF.
 
-- Bilingual EN/ES content
-- Responsive layout
-- Print-ready PDF view
-- Copy email interaction
-- QA checklist mode
-- Asset tooltip
-- Semantic HTML structure
-- Social preview metadata
-- JSON-LD Person schema
-- Optimized WebP profile image with PNG fallback
-- GitHub Pages-ready deployment
+La página es estática y no requiere instalación ni compilación. Para verla localmente, abrí `index.html` en un navegador. El contenido y los metadatos cambian con el idioma elegido; el español es el idioma inicial.
 
-## QA Mindset Demonstrated
+## Revisión y publicación
 
-- Content clarity
-- Asset review
-- Layout consistency
-- File naming and version tracking
-- Workflow handoff
-- Human review for AI-assisted work
+Los cambios deben revisarse en una rama y fusionarse a `main` solo con aprobación de Agustina. GitHub Pages usa la versión publicada desde la rama configurada en el repositorio. Después de la fusión, comprobar la [web pública](https://agustinaburellitj-code.github.io/Agustina-Burelli-CV/): contenido en ambos idiomas, fotografía, enlaces, ancho de celular y la vista de impresión/PDF. La comprobación de la web pública queda pendiente hasta que se actualice `main`.
 
-## Deployment Notes
+---
 
-When published, add discreet links for:
+# English
 
-- Live CV
-- GitHub repo
-- Download PDF
+Bilingual (Spanish/English) web resume focused on **QA Trainee** and entry-level IT roles. It presents Informatics Engineering studies at the University of Buenos Aires, testing training and basic technical skills.
+
+The linked [group academic backend project](https://github.com/jmeza03/tp_back) is **in progress**. The repository shows team progress; this CV does not claim ownership of particular modules or describe the system as complete.
+
+The static page keeps the existing WebP/PNG photograph and includes a language selector, contact links and a print/save-to-PDF button. Open `index.html` locally to review it. After approval and merging into `main`, verify the published GitHub Pages site in both languages, on mobile and in print.
